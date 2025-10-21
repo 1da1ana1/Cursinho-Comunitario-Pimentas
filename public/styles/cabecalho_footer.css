@@ -100,9 +100,7 @@ footer{
     width: 100%;
     padding: 1rem 2rem;
     align-items: center;
-    bottom: 0;
     display: flex;
-    position: fixed;
 }
 .footer-logos{
     margin-left: 1%;
