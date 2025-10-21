@@ -102,6 +102,7 @@ footer{
     align-items: center;
     bottom: 0;
     display: flex;
+    left: 0;
     position: fixed;
 }
 .footer-logos{

@@ -12,6 +12,6 @@ async function loadHTML(selector, file) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadHTML("header", "/src/vie");
-  loadHTML("footer", "/public/components/footer.html");
+  loadHTML("header", "/src/components/header.html");
+  loadHTML("footer", "/src/components/footer.html");
 });
