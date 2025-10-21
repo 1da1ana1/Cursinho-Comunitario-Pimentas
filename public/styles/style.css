@@ -1,0 +1,203 @@
+/*APOIE O PROJETO*/
+
+.doacoes {
+  font-family: 'Poppins', sans-serif;
+  color: #111;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  background: url("../../src/img/0f9a0a6b52a0b1e2f46321c7943a6c0e.jpg") center/cover no-repeat;
+  color: white;
+  text-align: left;
+  padding: 80px 20px;
+}
+
+/* o overlay avermelhado */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* cobre toda a área */
+  background: rgba(173, 0, 0, 0.6); /* vermelho com transparência */
+  z-index: 0;
+}
+
+/* garante que o texto fique acima do overlay */
+.hero .overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight:900;
+  line-height: 1;
+  font-style:italic;
+  padding-bottom: 25px;
+}
+
+.hero p {
+  margin-top: 10px;
+  color: #f5f5f5;
+  font-size: small;
+  font-weight: 525;
+}
+
+/* Impacto da doação */
+.impacto {
+  background: #E8E8E8;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.impacto h3 {
+  font-weight: 900;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  line-height: 1;
+  font-style: italic;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.card h4 {
+  margin: 10px 0;
+}
+
+/* PIX */
+.pix {
+  background: #266EFF;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  padding-bottom: 1px;
+}
+
+.pix h3 {
+  font-weight: 900;
+}
+
+.pix-box {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.pix-box p {
+    padding-top: 20px;
+}
+
+.qr {
+  background: #ccc;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chave {
+  background: #FFD901;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chave:hover {
+    background: #ffdd33;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.chave:active {
+    transform: scale(0.98);
+}
+
+.divisor {
+  width: 60%;
+  height: 0.1px;
+  background-color: white;
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+/* Outras formas */
+.outras {
+  background: #266EFF;
+  padding: 40px 20px;
+  padding-top: 20px;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  padding-bottom: 200px;
+}
+
+.outras h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: x-large;
+  padding-bottom: 15px;
+}
+
+.outras .card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  width: 90%;
+  max-width: 400px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.icon {
+  font-size: 35px;
+  flex-shrink: 0;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.texto h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000;
+}
+
+
+.texto p {
+  margin: 5px 0 0 0;
+  font-size: 0.9rem;
+  color: #333;
+}
