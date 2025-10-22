@@ -11,7 +11,18 @@ async function loadHTML(selector, file) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadHTML("header", "/src/components/header.html");
-  loadHTML("footer", "/src/components/footer.html");
+// Função para carregar um script dinamicamente
+function loadScript(src) {
+  const script = document.createElement('script');
+  script.src = src;
+  document.body.appendChild(script);
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await Promise.all([
+    loadHTML("header", "/src/components/header.html"),
+    loadHTML("footer", "/src/components/footer.html")
+  ]);
+
+  loadScript("/public/scripts/script.js");
 });
