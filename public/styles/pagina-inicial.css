@@ -25,6 +25,11 @@ h1{
     font-weight: 800;
 }
 
+h2{
+    font-size: 2.7rem;
+    text-align: center;
+}
+
 #hero-section p{
     color: #fff;
     font-size: 0.9rem;
@@ -66,9 +71,7 @@ h1{
 #about-section h2{
     color: #000;
     text-transform: uppercase;
-    font-size: 2.7rem;
     font-weight: 800;
-    text-align: center;
 }
 
 #cards{
@@ -130,7 +133,38 @@ h1{
 }   
 
 
+#student-section{
+    padding: 3rem 4.375rem 3rem 4.375rem;
+    background-color: #FFFEAA;
+}
 
+#student-section ul{
+  margin-top: 2rem;
+  background-color: #fff;
+  border: solid 1px #000;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  text-align: center;
+  min-width: 22.125rem;
+}
+
+#student-section img{
+  position: relative;
+  top: -3.125rem;
+  right: 11rem;
+  width: 5rem;
+}
+
+#student-section h2{
+  color: #990100;
+  font-style: italic;
+  font-weight: 700;
+}
+
+#student-section p{
+  color: #000;
+  
+}
 @media (min-width: 1024px) {
 
   #hero-section h1 {
@@ -154,7 +188,6 @@ h1{
     margin-left: auto;
     margin-right: auto;
   }
-
  
   .card {
     
