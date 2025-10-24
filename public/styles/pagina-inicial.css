@@ -33,8 +33,23 @@ h1{
 }
 
 #hero-section a{
-   border-radius: 5.662px;
-    border: 0.944px solid var(--amarelo, #FFD901);
-    background: var(--amarelo, #FFD901);
+   display: inline-block;
+
+   color: black;
+
+   border-radius: 0.354rem;
+
+   background: #FFD901;
+
+   height: 2.188rem;
+   width: 12.8rem;
+
+   text-align: center;
+   font-style: italic;
+   font-weight: 500;
+   position: relative;
+   line-height: 2.188rem;
+   margin-top: 1.3rem;
 }
+
 
