@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100vh;
+}
+
+#hero-section{
+    background-image: url('/public/images/banners/fundo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 4.375rem 3rem 4.375rem;
+}
+
+
+h1{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 3.4rem;
+    font-weight: 800;
+}
+
+#hero-section p{
+    color: #fff;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.563rem;
+}
+
+#hero-section a{
+   border-radius: 5.662px;
+    border: 0.944px solid var(--amarelo, #FFD901);
+    background: var(--amarelo, #FFD901);
+}
+
