@@ -218,7 +218,7 @@ h2 {
 
 /* como funciona */
 #secao-como-funciona {
-  padding: 2rem 1.1rem 5rem 1.1rem;
+  padding: 2rem 1.1rem 2rem 1.1rem;
   text-align: center;
 }
 
@@ -226,41 +226,32 @@ h2 {
   margin-bottom: 2rem;
 }
 .cards-container {
-    display: flex; /* Essencial para alinhamento horizontal */
-    
-    /* DESABILITA A QUEBRA DE LINHA: TUDO FICA NA MESMA LINHA */
-    flex-wrap: nowrap; 
+  display: flex;
 
-    /* ATIVA O SCROLL HORIZONTAL */
-    overflow-x: auto; 
-    overflow-y: hidden; /* Oculta a barra de scroll vertical, por segurança */
-    
-    /* Centraliza o conteúdo horizontalmente (regras de carrossel) */
-    justify-content: flex-start; /* Alinha os cards ao início do contêiner */
-    
-    /* REGRAS DE SCROLL SNAP (Melhora a experiência do carrossel) */
-    scroll-snap-type: x mandatory; /* Força a parada em um ponto definido (o início de cada card) */
-    -webkit-overflow-scrolling: touch; /* Otimização para iOS */
-    
-    /* Remove a margem horizontal automática desnecessária em carrossel */
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    
-    /* Adiciona um padding nas laterais para ver o próximo item */
-    padding: 0 1.5rem 1rem 1.5rem; /* Padding vertical (topo/fundo) e horizontal (laterais) */
-    gap: 1rem;
+  flex-wrap: nowrap;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  justify-content: flex-start;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+
+  padding: 0 1.5rem 1rem 1.5rem;
+  gap: 1rem;
 }
 .meu-card {
+  flex-shrink: 0;
+  width: 90%;
+  max-width: 15rem;
+  height: auto;
 
-  /* O card precisa ter um tamanho FIXO e não pode encolher */
-    flex-shrink: 0; 
-    width: 90%; /* Ocupa 90% da largura da tela no mobile */
-    max-width: 15rem; /* Mantém o limite de largura que definimos antes */
-    height: auto;
-    
-    /* PONTO DE PARADA DO SCROLL SNAP */
-    scroll-snap-align: start; /* O scroll para no início de cada card */
+  scroll-snap-align: start;
 
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -279,7 +270,7 @@ h2 {
 
 .card-conteudo-principal,
 .card-conteudo-links {
- padding: 0.75rem; /* Reduzindo o padding interno */
+  padding: 0.75rem; 
 }
 
 .card-titulo {
@@ -332,6 +323,34 @@ h2 {
 
 .meu-card .card-conteudo-links {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/*secao nossa equipe*/
+
+#secao-equipe{
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 2rem 1.5rem 1rem 1.5rem;
+}
+
+#secao-equipe h2{
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+#secao-equipe p{
+  display: flex;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+#secao-equipe img{
+  width: 300px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 @media (min-width: 1024px) {
