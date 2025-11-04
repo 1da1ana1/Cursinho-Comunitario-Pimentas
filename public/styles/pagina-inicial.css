@@ -353,6 +353,25 @@ h2 {
   margin: auto;
 }
 
+/*seção alunos pelo brasil*/
+#secao-alunos-brasil{
+  padding: 2rem 1.5rem 1rem 1.5rem;
+}
+
+#secao-alunos-brasil img{
+  width: 350px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+#secao-localizacao{
+  padding: 2rem 1.5rem 1rem 1.5rem;
+  background-color: #ffd901;
+}
+
 @media (min-width: 1024px) {
   #hero-section h1 {
     font-size: 4.2rem;
