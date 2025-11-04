@@ -131,8 +131,8 @@ h2 {
 #student-section {
   background-image: url("/public/images/banners/fundo-student-section.png");
   background-repeat: no-repeat;
-  background-position: center bottom; 
-  background-size: contain; 
+  background-position: center bottom;
+  background-size: contain;
   padding: 2rem 1.1rem 3rem 1.1rem;
   background-color: #fffeaa;
 }
@@ -148,7 +148,6 @@ h2 {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  
 }
 
 #student-section ul li {
@@ -164,7 +163,7 @@ h2 {
 .text-block {
   display: flex;
   flex-direction: column;
-  width: 100%; 
+  width: 100%;
 }
 
 #student-section img {
@@ -206,7 +205,7 @@ h2 {
   height: 2.369rem;
   background-color: #198754;
   padding: 0.873rem 0.436rem;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: 0.65rem;
   font-weight: 600;
   display: flex;
@@ -217,7 +216,124 @@ h2 {
   margin-top: 1rem;
 }
 
-/*responsividade para desktop*/
+/* como funciona */
+#secao-como-funciona {
+  padding: 2rem 1.1rem 5rem 1.1rem;
+  text-align: center;
+}
+
+#secao-como-funciona h2 {
+  margin-bottom: 2rem;
+}
+.cards-container {
+    display: flex; /* Essencial para alinhamento horizontal */
+    
+    /* DESABILITA A QUEBRA DE LINHA: TUDO FICA NA MESMA LINHA */
+    flex-wrap: nowrap; 
+
+    /* ATIVA O SCROLL HORIZONTAL */
+    overflow-x: auto; 
+    overflow-y: hidden; /* Oculta a barra de scroll vertical, por segurança */
+    
+    /* Centraliza o conteúdo horizontalmente (regras de carrossel) */
+    justify-content: flex-start; /* Alinha os cards ao início do contêiner */
+    
+    /* REGRAS DE SCROLL SNAP (Melhora a experiência do carrossel) */
+    scroll-snap-type: x mandatory; /* Força a parada em um ponto definido (o início de cada card) */
+    -webkit-overflow-scrolling: touch; /* Otimização para iOS */
+    
+    /* Remove a margem horizontal automática desnecessária em carrossel */
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    
+    /* Adiciona um padding nas laterais para ver o próximo item */
+    padding: 0 1.5rem 1rem 1.5rem; /* Padding vertical (topo/fundo) e horizontal (laterais) */
+    gap: 1rem;
+}
+.meu-card {
+
+  /* O card precisa ter um tamanho FIXO e não pode encolher */
+    flex-shrink: 0; 
+    width: 90%; /* Ocupa 90% da largura da tela no mobile */
+    max-width: 15rem; /* Mantém o limite de largura que definimos antes */
+    height: auto;
+    
+    /* PONTO DE PARADA DO SCROLL SNAP */
+    scroll-snap-align: start; /* O scroll para no início de cada card */
+
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.card-imagem-topo {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card-conteudo-principal,
+.card-conteudo-links {
+ padding: 0.75rem; /* Reduzindo o padding interno */
+}
+
+.card-titulo {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.card-texto {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  color: #495057;
+}
+
+.card-lista-flush {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-lista-item {
+  position: relative;
+  display: block;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  color: #212529;
+  background-color: #fff;
+
+  border-bottom: none;
+}
+
+.card-lista-item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-link {
+  text-decoration: none;
+  margin-right: 1rem;
+  color: #0d6efd;
+  margin-right: 0.75rem;
+  font-size: 0.75rem;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.meu-card .card-conteudo-links {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
 @media (min-width: 1024px) {
   #hero-section h1 {
     font-size: 4.2rem;
