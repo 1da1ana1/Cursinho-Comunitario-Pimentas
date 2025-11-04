@@ -1,203 +1,225 @@
-/*APOIE O PROJETO*/
 
-.doacoes {
-  font-family: 'Poppins', sans-serif;
-  color: #111;
+.slide1 {
+    margin: 2rem auto; 
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
 }
 
-/* Hero */
-.hero {
-  position: relative;
-  background: url("../../src/img/0f9a0a6b52a0b1e2f46321c7943a6c0e.jpg") center/cover no-repeat;
-  color: white;
-  text-align: left;
-  padding: 80px 20px;
+.sliders {
+    width: 600%; 
+    height: 100%;
+    display: flex;
 }
 
-/* o overlay avermelhado */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* cobre toda a área */
-  background: rgba(173, 0, 0, 0.6); /* vermelho com transparência */
-  z-index: 0;
+.slide {
+    width: 16.6666%; 
+    height: 100%;
 }
 
-/* garante que o texto fique acima do overlay */
-.hero .overlay {
-  position: relative;
-  z-index: 1;
-  max-width: 400px;
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
 }
 
-.hero h2 {
-  font-size: 2.5rem;
-  font-weight:900;
-  line-height: 1;
-  font-style:italic;
-  padding-bottom: 25px;
+.slide1 input {
+    display: none;
 }
 
-.hero p {
-  margin-top: 10px;
-  color: #f5f5f5;
-  font-size: small;
-  font-weight: 525;
+.manual-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
 }
 
-/* Impacto da doação */
-.impacto {
-  background: #E8E8E8;
-  text-align: center;
-  padding: 40px 20px;
+.manual-btn {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.impacto h3 {
-  font-weight: 900;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  line-height: 1;
-  font-style: italic;
+.manual-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+#radio1:checked ~ .manual-navigation .manual-btn[for='radio1'] {
+    background-color: white;
+}
+#radio2:checked ~ .manual-navigation .manual-btn[for='radio2'] {
+    background-color: white;
+}
+#radio3:checked ~ .manual-navigation .manual-btn[for='radio3'] {
+    background-color: white;
 }
 
-.card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  padding: 20px;
+#radio4:checked ~ .manual-navigation .manual-btn[for='radio4'] {
+    background-color: white;
+}
+#radio5:checked ~ .manual-navigation .manual-btn[for='radio5'] {
+    background-color: white;
+}
+#radio6:checked ~ .manual-navigation .manual-btn[for='radio6'] {
+    background-color: white;
 }
 
-.card h4 {
-  margin: 10px 0;
+h1{
+    text-align: center;
+    font-style: italic;
+    color: white;
+}
+.Azul{
+    background-color:#266EFF;
+}
+.Azul p{
+    text-align: center;
+    color: white;
+    margin: 0 5%;
+
 }
 
-/* PIX */
-.pix {
-  background: #266EFF;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-  padding-bottom: 1px;
+/* VERSÃO MOBILE */
+@media (max-width: 768px) {
+    .slide1 {
+        max-width: 95%; 
+        aspect-ratio: 4 / 3; 
+    }
+
+    .manual-navigation {
+        bottom: 10px;
+    }
+
+    .manual-btn {
+        padding: 4px;
+    }
 }
 
-.pix h3 {
-  font-weight: 900;
+.Azul, .green, .red {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
-.pix-box {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 12px;
-  margin-top: 20px;
+.Azul p, .green p {
+    max-width: 800px;
+    text-align: center;  
+    margin-left: auto;  
+    margin-right: auto; 
+    padding: 0 1rem;  
 }
 
-.pix-box p {
-    padding-top: 20px;
+/* 4. Adiciona espaço entre o parágrafo inicial e o carrossel */
+.Azul h1 + p {
+    margin-bottom: 2rem;
 }
 
-.qr {
-  background: #ccc;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.chave {
-  background: #FFD901;
-  color: #000;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-.chave:hover {
-    background: #ffdd33;
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.chave:active {
-    transform: scale(0.98);
-}
-
-.divisor {
-  width: 60%;
-  height: 0.1px;
-  background-color: white;
-  margin: 20px auto;
-  border-radius: 2px;
-}
-
-/* Outras formas */
-.outras {
-  background: #266EFF;
-  padding: 40px 20px;
-  padding-top: 20px;
-  align-items: center;
-  flex-direction: column;
-  display: flex;
-  text-align: center;
-  padding-bottom: 200px;
-}
-
-.outras h4 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #fff;
-  font-weight: lighter;
-  font-style: italic;
-  font-size: x-large;
-  padding-bottom: 15px;
-}
-
-.outras .card {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 15px;
-  width: 90%;
-  max-width: 400px;
-
-  display: flex;
-  align-items: center;
-  gap: 15px
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.icon {
-  font-size: 35px;
-  flex-shrink: 0;
-}
-
-.texto {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.texto h5 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #000;
+.espaço img, .financiamento img, .voluntarios img, .cidadã img, .autonomia img, .acolhimento img {
+    width: 150px;
+    height: 150px;     
+    object-fit: contain; 
+    margin: 0 auto;      
+    margin-bottom: 1.5rem; 
+    display: flex;
 }
 
 
-.texto p {
-  margin: 5px 0 0 0;
-  font-size: 0.9rem;
-  color: #333;
+.espaço, .financiamento, .voluntarios, .cidadã, .autonomia, .acolhimento {
+    margin-bottom: 3rem;
 }
+
+.voluntarios, .acolhimento {
+    margin-bottom: 0;
+}
+
+.h1green, .h1red, .green h1, .red h1 {
+    margin-bottom: 3rem !important;
+}
+
+.h1green{
+    background-color: #3CBC00;
+    color: white;
+    font-style: italic;
+    margin-bottom: 10%;
+}
+
+.green{
+    background-color: #3CBC00;
+
+}
+
+
+.green p{
+    color: white;
+    text-align: center;
+}
+
+.espaço img{
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+
+.financiamento img{
+
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+
+.voluntarios img{
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+.red{
+    background-color: #B90504;;
+}
+
+.cidadã img{
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+
+.autonomia img{
+
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+
+.acolhimento img{
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+    display: flex;
+}
+
+
+.red p{
+    color: white;
+    max-width: 800px;
+    text-align: center;  
+    margin-left: auto;  
+    margin-right: auto; 
+    padding: 0 1rem; 
+}
+
+>>>>>>> 4914a8b8e17267bd264f994ce5a935264477a5b5

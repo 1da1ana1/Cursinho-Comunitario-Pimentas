@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100vh;
+}
+
+/*hero section*/
+#hero-section{
+    background-image: url('/public/images/banners/fundo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 4.375rem 3rem 4.375rem;
+}
+
+
+h1{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 3.4rem;
+    font-weight: 800;
+}
+
+h2{
+    font-size: 2.7rem;
+    text-align: center;
+}
+
+#hero-section p{
+    color: #fff;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.563rem;
+}
+
+#hero-section a{
+   display: inline-block;
+
+   color: black;
+
+   border-radius: 0.354rem;
+
+   background: #FFD901;
+
+   height: 2.188rem;
+   width: 12.8rem;
+
+   text-align: center;
+   font-style: italic;
+   font-weight: 500;
+   position: relative;
+   line-height: 2.188rem;
+   margin-top: 1.3rem;
+}
+
+/*about-section*/
+
+#about-section{
+    background-image: url('/public/images/banners/fundo-about-section.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #E8E8E8;
+    padding: 3rem 4.375rem 3rem 4.375rem;
+}
+
+#about-section h2{
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+#cards{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem 1rem;
+    justify-items: center;
+    
+    width: fit-content;
+    height: fit-content;
+    
+
+}
+
+.card{
+    border: solid 1px #343434;
+    display: grid;
+    background-color: #fff;
+    text-align: left;
+    width: 12.8rem;
+}
+
+.card-header{
+    border-bottom: solid 1px #343434;
+    font-weight: 400;
+    line-height: 150%;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    
+}
+
+#cards .card:nth-child(1) .card-header {
+    background-color: #83EB52; 
+}
+
+
+#cards .card:nth-child(2) .card-header {
+    background-color: #6FA9FF; 
+}
+
+#cards .card:nth-child(3) .card-header {
+    background-color: #FFD901; 
+}
+
+#cards .card:nth-child(4) .card-header {
+    background-color: #D95353; 
+}
+
+.card-title{
+    font-size: 0.98rem;
+    padding: 0.5rem 1rem 0 1rem;
+}
+
+.card-description{
+    font-size: 0.714rem;
+    padding: 0 1rem 0.5rem 1rem;
+}   
+
+
+#student-section{
+    padding: 3rem 4.375rem 3rem 4.375rem;
+    background-color: #FFFEAA;
+}
+
+#student-section ul{
+  margin-top: 2rem;
+  background-color: #fff;
+  border: solid 1px #000;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  text-align: center;
+  min-width: 22.125rem;
+}
+
+#student-section img{
+  position: relative;
+  top: -3.125rem;
+  right: 11rem;
+  width: 5rem;
+}
+
+#student-section h2{
+  color: #990100;
+  font-style: italic;
+  font-weight: 700;
+}
+
+#student-section p{
+  color: #000;
+  
+}
+@media (min-width: 1024px) {
+
+  #hero-section h1 {
+    font-size: 4.2rem; 
+  }
+
+  #hero-section p {
+    font-size: 1.1rem;  
+    max-width: 65ch;    
+  }
+
+
+  #about-section h2 {
+    font-size: 3.2rem; 
+  }
+
+  #cards {
+    
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ 
+  .card {
+    
+    width: 15rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem; 
+  }
+
+  .card-description {
+    font-size: 0.9rem; 
+  }
+
+}
