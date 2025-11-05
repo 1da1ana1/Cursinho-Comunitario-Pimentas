@@ -29,6 +29,7 @@ h1 {
 h2 {
   font-size: 2rem;
   text-align: center;
+  margin-bottom: 1.8rem;
 }
 
 #hero-section p {
@@ -222,9 +223,7 @@ h2 {
   text-align: center;
 }
 
-#secao-como-funciona h2 {
-  margin-bottom: 2rem;
-}
+
 .cards-container {
   display: flex;
 
@@ -334,7 +333,6 @@ h2 {
 }
 
 #secao-equipe h2 {
-  margin-bottom: 2rem;
   text-transform: uppercase;
 }
 #secao-equipe p {
@@ -370,7 +368,23 @@ h2 {
 #secao-localizacao {
   padding: 2rem 1.5rem 1rem 1.5rem;
   background-color: #ffd901;
-  
+}
+
+#secao-localizacao h2{
+  font-style: italic;
+  font-weight: 400;
+}
+
+#secao-localizacao p{
+  margin: 1rem 0 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#secao-localização iframe{
+  cursor: pointer;
 }
 
 #map {
@@ -378,12 +392,12 @@ h2 {
 }
 #endereco {
   display: block;
-  margin: 0 auto;          /* centraliza horizontalmente */
-  width: 100%;             /* ocupa toda a largura disponível */
-  max-width: 800px;        /* limita o tamanho em telas grandes */
-  height: 350px;           /* altura padrão em desktops */
-  border: 2px solid #000;  /* opcional */
-  border-radius: 8px;      /* deixa o mapa com cantos arredondados */
+  margin: 0 auto;         
+  width: 100%;           
+  max-width: 1000px;        
+  height: 350px;           
+  border: 2px solid #000; 
+  border-radius: 8px;     
 }
 
 @media (min-width: 1024px) {
