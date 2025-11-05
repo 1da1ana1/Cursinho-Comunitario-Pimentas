@@ -270,7 +270,7 @@ h2 {
 
 .card-conteudo-principal,
 .card-conteudo-links {
-  padding: 0.75rem; 
+  padding: 0.75rem;
 }
 
 .card-titulo {
@@ -327,24 +327,24 @@ h2 {
 
 /*secao nossa equipe*/
 
-#secao-equipe{
+#secao-equipe {
   background-color: #0d6efd;
   color: #fff;
   padding: 2rem 1.5rem 1rem 1.5rem;
 }
 
-#secao-equipe h2{
+#secao-equipe h2 {
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
-#secao-equipe p{
+#secao-equipe p {
   display: flex;
   font-size: 0.8rem;
   text-align: center;
   margin-bottom: 0.6rem;
 }
 
-#secao-equipe img{
+#secao-equipe img {
   width: 300px;
   height: auto;
   display: flex;
@@ -354,11 +354,11 @@ h2 {
 }
 
 /*seção alunos pelo brasil*/
-#secao-alunos-brasil{
+#secao-alunos-brasil {
   padding: 2rem 1.5rem 1rem 1.5rem;
 }
 
-#secao-alunos-brasil img{
+#secao-alunos-brasil img {
   width: 350px;
   height: auto;
   display: flex;
@@ -367,9 +367,23 @@ h2 {
   margin: auto;
 }
 
-#secao-localizacao{
+#secao-localizacao {
   padding: 2rem 1.5rem 1rem 1.5rem;
   background-color: #ffd901;
+  
+}
+
+#map {
+  height: 450px;
+}
+#endereco {
+  display: block;
+  margin: 0 auto;          /* centraliza horizontalmente */
+  width: 100%;             /* ocupa toda a largura disponível */
+  max-width: 800px;        /* limita o tamanho em telas grandes */
+  height: 350px;           /* altura padrão em desktops */
+  border: 2px solid #000;  /* opcional */
+  border-radius: 8px;      /* deixa o mapa com cantos arredondados */
 }
 
 @media (min-width: 1024px) {
