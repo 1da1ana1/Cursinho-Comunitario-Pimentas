@@ -13,6 +13,17 @@
       rel="stylesheet"
     />
     <script src="/public/scripts/includeComponents.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
   </head>
 
   <body>
@@ -36,38 +47,34 @@
 
         <div id="cards">
           <div class="card">
-            <p class="card-header">Card header</p>
-            <p class="card-title">Card Title</p>
+            <p class="card-header">Lugar de integração</p>
             <p class="card-description">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              No cursinho, você aprende a ser uma pessoa mais humana, empática e
+              com formação de cidadão.
             </p>
           </div>
 
           <div class="card">
-            <p class="card-header">Card header</p>
-            <p class="card-title">Card Title</p>
+            <p class="card-header">Amadurecimento</p>
             <p class="card-description">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Nesse ambiente você lida com responsabilidades, se moldando para a
+              vida adulta.
             </p>
           </div>
 
           <div class="card">
-            <p class="card-header">Card header</p>
-            <p class="card-title">Card Title</p>
+            <p class="card-header">Além da escola</p>
             <p class="card-description">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Aqui você aprende como o mundo real funciona e temas pertinentes
+              da nossa realidade.
             </p>
           </div>
 
           <div class="card">
-            <p class="card-header">Card header</p>
-            <p class="card-title">Card Title</p>
+            <p class="card-header">Laços</p>
             <p class="card-description">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              No seu período como aluno, terá contato com pessoas
+              extraordinárias e levará conexões para vida.
             </p>
           </div>
         </div>
@@ -77,28 +84,56 @@
         <h2>Como faço para ser aluno?</h2>
         <ul>
           <li>
-            <p class="information-item">1º Inscreva-se no processo seletivo</p>
-            <p class="information-descr iption">Descrição</p>
+            <span><img src="/public/images/logos/chat-text.svg" alt="" /></span>
+            <div class="text-block">
+              <p class="information-title">1º Entre em contato pelo Whastapp</p>
+              <p class="information-description">
+                O Rômulo é um dos coordenadores do cursinho, e o contato inicial
+                é direto com ele. Essa etapa não é a inscrição em si, mas uma
+                triagem de alunos. Com ele pode tirar todas as suas dúvidas
+              </p>
+            </div>
           </li>
-          <span><img src="/public/images/logos/journals.svg" alt="" /></span>
 
           <li>
-            <p class="information-item">1º Inscreva-se no processo seletivo</p>
-            <p class="information-description">Descrição</p>
+            <span><img src="/public/images/logos/journals.svg" alt="" /></span>
+            <div class="text-block">
+              <p class="information-title">
+                2º Se programe e tenha seus documentos em dia
+              </p>
+              <p class="information-description">
+                Após a orientação no Whastapp, será necessário ter alguns
+                documentos em mãos e suas cópias: rg, cpf, título de eleitor,
+                histórico escolar e o número do cadúnico(impresso). 
+              </p>
+            </div>
           </li>
-          <span><img src="/public/images/logos/clock.svg" alt="" /></span>
 
           <li>
-            <p class="information-item">1º Inscreva-se no processo seletivo</p>
-            <p class="information-description">Descrição</p>
+            <span><img src="/public/images/logos/clock.svg" alt="" /></span>
+
+            <div class="text-block">
+              <p class="information-title">
+                3º Compareça no cursinho pessoalmente
+              </p>
+              <p class="information-description">
+                Seja pontual no dia da inscrição, traga todos os documentos
+                necessários com suas cópias além do café e/ou papel higiênico.
+              </p>
+            </div>
           </li>
-          <span><img src="/public/images/logos/mailbox.svg" alt="" /></span>
 
           <li>
-            <p class="information-item">1º Inscreva-se no processo seletivo</p>
-            <p class="information-description">Descrição</p>
+            <span><img src="/public/images/logos/mailbox.svg" alt="" /></span>
+
+            <div class="text-block">
+              <p class="information-title">4º Próximos passos</p>
+              <p class="information-description">
+                E esse é o nosso processo seletivo! Sem provas e totalmente
+                humanizado.
+              </p>
+            </div>
           </li>
-          <span><img src="/public/images/logos/chat-text.svg" alt="" /></span>
         </ul>
 
         <a href="/src/views/processo-seletivo.html"
@@ -106,16 +141,156 @@
         >
       </section>
 
-      <section id="secao-como-funciona"></section>
+      <section id="secao-como-funciona">
+        <h2>Como funciona?</h2>
 
-      <section id="secao-equipe"></section>
+        <div class="cards-container">
+          <div class="meu-card">
+            <img
+              src="/public/images/banners/BrasilComS_00456.jpg"
+              class="card-imagem-topo"
+              alt="Descrição da imagem"
+            />
 
-      <section id="secao-alunos-brasil"></section>
+            <div class="card-conteudo-principal">
+              <h5 class="card-titulo">Dia e horário das aulas</h5>
+              <p class="card-texto">
+                As aulas acontecem nas quartas, sextas e fim de semana
+              </p>
+            </div>
 
-      <section id="secao-localizacao"></section>
+            <ul class="card-lista-flush">
+              <li class="card-lista-item">
+                <strong>às quartas:</strong> das 19h - 21h
+              </li>
+              <li class="card-lista-item">
+                <strong>às sextas:</strong> das 19h - 21h, com diferencial que
+                não é "aula" e sim um documentário ou filme seguido de um
+                debate.
+              </li>
+              <li class="card-lista-item">
+                <strong>Ao final de semana:</strong> das 8h - 13h30, abordando
+                os conteúdos primordiais para o enem e vestibulares.
+              </li>
+            </ul>
+
+            <div class="card-conteudo-links">
+              <a href="#" class="card-link">Veja noss</a>
+              <a href="#" class="card-link">Outro link</a>
+            </div>
+          </div>
+
+          <div class="meu-card">
+            <img
+              src="/public/images/banners/BrasilComS_00486.jpg"
+              class="card-imagem-topo"
+              alt="Descrição da imagem"
+            />
+
+            <div class="card-conteudo-principal">
+              <h5 class="card-titulo">Ciclo básico</h5>
+              <p class="card-texto">
+                Não se preocupe caso tenha dificuldades em matemática básica ou
+                lingua portuguesa, sabemos sobre a defasagem do ensino nas
+                escolas públicas e por isso temos o
+                <strong>ciclo básico para aprender tudo desde o início.</strong>
+                Sem julgamentos nem discriminação!
+              </p>
+            </div>
+
+            <ul class="card-lista-flush">
+              <li class="card-lista-item">
+                Obrigatório para todos os alunos ingressantes
+              </li>
+              <li class="card-lista-item">duração de 3 meses</li>
+              <li class="card-lista-item">No ritmo de cada um</li>
+            </ul>
+
+            <div class="card-conteudo-links">
+              <a href="#" class="card-link">Link do Card</a>
+              <a href="#" class="card-link">Outro link</a>
+            </div>
+          </div>
+
+          <div class="meu-card">
+            <img
+              src="/public/images/banners/BrasilComS_00692.jpg"
+              class="card-imagem-topo"
+              alt="Descrição da imagem"
+            />
+
+            <div class="card-conteudo-principal">
+              <h5 class="card-titulo">Alimentação</h5>
+              <p class="card-texto">
+                O cursinho disponibiliza café todos os dias, café da manhã aos
+                fins de semana com almoço comunitário aos sábados.
+              </p>
+            </div>
+
+            <ul class="card-lista-flush">
+              <li class="card-lista-item">
+                Antes das aulas sempre terá um café quentinho
+              </li>
+              <li class="card-lista-item">
+                O cursinho sempre recebe doações, seja de frutas ou guloseimas
+                que ficam disponíveis também.
+              </li>
+              <li class="card-lista-item">
+                O almoço comunitário conta com algum familiar voluntário para
+                conhizá-lo.
+              </li>
+            </ul>
+
+            <div class="card-conteudo-links">
+              <a href="#" class="card-link">Link do Card</a>
+              <a href="#" class="card-link">Outro link</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="secao-equipe">
+        <h2>Nossa equipe</h2>
+        <p>
+          Todos os professores, coordenadores e outros voluntários são ex-alunos
+          do cursinho que já ingressaram na universidade ou já finalizaram o
+          curso.
+        </p>
+        <img
+          src="/public/images/banners/solidarity.png"
+          alt="iamgem de solidariedade"
+        />
+        <p>
+          Essa ciclo que alimenta o cursinho, deixando ele vivo e pungente com
+          seus voluntários, ex-alunos gratos pela oportunidade, retornam
+          retribuem para os próximos.
+        </p>
+      </section>
+
+      <section id="secao-alunos-brasil">
+        <h2>Alunos pelo Brasil</h2>
+
+        <div id="map"></div>
+      </section>
+
+      <section id="secao-localizacao">
+        <h2>Onde nos encontrar</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.965257011108!2d-46.407379325073514!3d-23.461717678868393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce6256dd025f71%3A0x9c4a7650681379a2!2sCursinho%20Comunit%C3%A1rio%20Pimentas!5e0!3m2!1spt-BR!2sbr!4v1762304315011!5m2!1spt-BR!2sbr"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          id="endereco"
+        ></iframe>
+        <p>
+          Estamos em R. do Poente, 148 - Conj. Marcos Freire, Guarulhos - SP,
+          07263-721
+        </p>
+      </section>
     </main>
 
     <footer></footer>
-    <script src="/public/scripts/script.js"></script>
+    <script src="/public/scripts/map-config.js"></script>
+    <script src="/public/scripts/onde-estamos.js"></script>
   </body>
 </html>
