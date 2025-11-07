@@ -1,19 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apoie o Projeto</title>
-    <link rel="stylesheet" href="/public/styles/cabecalho_footer.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script src="/public/scripts/includeComponents.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apoie o Projeto</title>
+
+  <link rel="stylesheet" href="../../public/styles/cabecalho_footer.css">
+  <link rel="stylesheet" href="/public/styles/acessibilidade.css">
+  <link rel="stylesheet" href="/public/styles/responsivo.css">
+  <link rel="stylesheet" href="../../public/styles/apoie-projeto.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+
+  <script src="/public/scripts/includeComponents.js" defer></script>
 </head>
 
 <body>
-    <header></header>
+  <header>
+    <nav id="nav-menu" class="cabecalho-inferior">
+      <ul>
+        <li><a href="/src/views/index.html">Início</a></li>
+        <li><a href="/src/views/historia.html">História</a></li>
+        <li><a href="/src/views/apoie-o-projeto.html">Apoie o Projeto</a></li>
+        <li><a href="/src/views/projetos-eventos.html">Projetos e Eventos</a></li>
+        <li><a href="/src/views/processo-seletivo.html">Processo Seletivo</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer></footer>
+  <main class="doacoes">
+    <section class="hero">
+      <div class="overlay">
+        <h2>Sua doação<br> transforma<br> futuros</h2>
+        <p>O Cursinho Comunitário Pimentas é 100% gratuito e mantido por voluntários e doações. 
+        Com a sua ajuda, continuamos oferecendo educação popular e oportunidades reais de acesso ao ensino superior.</p>
+      </div>
+    </section>
+
+    <section class="impacto">
+      <h3>Veja o impacto <br>da sua doação</h3>
+      <div class="cards">
+        <div class="card">
+          <img src="../../public/images/logos/album.svg" alt="Ícone de livro" class="icon">
+          <h4>Com R$30</h4>
+          <p>Contribui para a compra de materiais de estudo e impressão de simulados usados em sala de aula.</p>
+        </div>
+
+        <div class="card">
+          <img src="../../public/images/logos/apple.svg" alt="Ícone de maçã" class="icon">
+          <h4>Com R$70</h4>
+          <p>Ajuda na manutenção do espaço físico e nas atividades complementares, como oficinas e saraus.</p>
+        </div>
+
+        <div class="card">
+          <img src="../../public/images/logos/graduation-cap.svg" alt="Ícone de formatura" class="icon">
+          <h4>Com R$150</h4>
+          <p>Garante a continuidade do projeto e apoia diretamente a formação de mais alunos prontos para o vestibular.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pix">
+      <h3>FAÇA AGORA UMA DOAÇÃO</h3>
+      <div class="pix-box">
+        <div class="qr">QR code PIX</div>
+        <button class="chave">Copiar chave</button>
+        <p>Dados: XXXXXXXXXXXXXX</p>
+        <p>Qualquer valor faz a diferença para manter viva a missão do Cursinho Comunitário Pimentas.</p>
+      </div>
+    </section>
+
+    <section class="outras">
+      <div class="divisor"></div>
+      <h4>Outras formas de contribuição</h4>
+
+      <div class="card">
+        <img src="../../public/images/logos/library-big (1).svg" alt="Ícone de estante de livros" class="icon">
+        <div class="texto">
+          <h5>Doe materiais</h5>
+          <p>Você pode apoiar doando livros, apostilas, papéis e outros materiais escolares que serão usados nas aulas e simulados.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../../public/images/logos/megaphone (1).svg" alt="Ícone de megafone" class="icon">
+        <div class="texto">
+          <h5>Divulgue nossa causa</h5>
+          <p>Compartilhe o projeto nas redes sociais e ajude mais pessoas a conhecerem o cursinho e suas iniciativas.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../../public/images/logos/handshake.svg" alt="Ícone de aperto de mãos" class="icon">
+        <div class="texto">
+          <h5>Seja voluntário</h5>
+          <p>Faça parte da nossa equipe! O cursinho é mantido por pessoas que acreditam na transformação pela educação e doam seu tempo e conhecimento.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logos">
+      <div class="footer-coluna">
+        <img src="/src/img/Babi.png" alt="Logo-Babi" id="Babi">
+        <p id="nome">Associação Bárbara Cristina Sá</p>
+      </div>
+      <img src="/src/img/logo_ccp.png" alt="Logo-Cursinho" id="ccp">
+    </div>
+
+    <div id="footer-links">
+      <nav id="nav-footer" class="cabecalho-footer">
+        <ul>
+          <li><a href="/src/views/index.html">Início</a></li>
+          <li><a href="/src/views/historia.html">História</a></li>
+          <li><a href="/src/views/apoie-o-projeto.html">Apoie o Projeto</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="footer-links">
+      <nav id="nav-footer">
+        <ul>
+          <li><a href="/src/views/projetos-eventos.html">Projetos e Eventos</a></li>
+          <li><a href="/src/views/processo-seletivo.html">Processo Seletivo</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-desktop-content">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/cursinhocomunitariopimentas/" target="_blank">
+          <img src="/src/img/instagram.svg" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@cursinhopimentas" target="_blank">
+          <img src="/src/img/video_12940276.svg" alt="YouTube">
+        </a>
+        <a href="https://www.facebook.com/cursinhocomunitariopimentascp" target="_blank">
+          <img src="/src/img/facebook.svg" alt="Facebook">
+        </a>
+      </div>
+      <div class="footer-info">
+        <p id="endereco">Rua do Poente Nº 148 Conjunto Marcos Freire - Guarulhos - SP</p>
+        <p id="cnpj">CNPJ: 08.033.435/001-44</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/public/scripts/script.js"></script>
 </body>
 </html>
