@@ -88,8 +88,11 @@ body{
     left: 1.5rem;
     top: 50%; 
     transform: translateY(-50%);
-    color: white;
-    font-size: 2.5rem;
+}
+
+.botao-menu-mobile img {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 footer{
@@ -97,9 +100,9 @@ footer{
     width: 100%;
     padding: 1rem 2rem;
     align-items: center;
-    display: flex;
-    left: 0;
     bottom: 0;
+    display: flex;
+    position: fixed;
 }
 .footer-logos{
     margin-left: 1%;
