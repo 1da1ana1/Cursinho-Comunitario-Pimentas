@@ -77,3 +77,10 @@ main {
     margin-bottom: 10px;
 }
 
+.calendario{
+    padding-top: 15px;
+    background-image: url("../../src/img/fundoCalendario.png");
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}

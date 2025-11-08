@@ -1,0 +1,210 @@
+/* APOIE O PROJETO */
+
+.doacoes {
+  font-family: 'Poppins', sans-serif;
+  color: #111;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  background: url("../images/historico/foto-salinha.jpg") center/cover no-repeat;
+  color: white;
+  text-align: left;
+  padding: 5rem 1.25rem;
+}
+
+/* o overlay avermelhado */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* cobre toda a área */
+  background: rgba(173, 0, 0, 0.6); /* vermelho com transparência */
+  z-index: 0;
+}
+
+/* garante que o texto fique acima do overlay */
+.hero .overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 25rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+  font-style: italic;
+  padding-bottom: 1.5625rem;
+}
+
+.hero p {
+  margin-top: 0.625rem;
+  color: #f5f5f5;
+  font-size: small;
+  font-weight: 525;
+}
+
+/* Impacto da doação */
+.impacto {
+  background: #E8E8E8;
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+}
+
+.impacto h3 {
+  font-weight: 900;
+  font-size: 2rem;
+  margin-bottom: 1.875rem;
+  line-height: 1;
+  font-style: italic;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.1);
+  padding: 1.25rem;
+}
+
+.card h4 {
+  margin: 0.625rem 0;
+}
+
+.icon {
+  width: 3rem;   /* ajuste o tamanho conforme precisar */
+  height: 3rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+
+/* PIX */
+.pix {
+  background: #266EFF;
+  color: white;
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  padding-bottom: 0.0625rem;
+}
+
+.pix h3 {
+  font-weight: 900;
+}
+
+.pix-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.pix-box p {
+  padding-top: 1.25rem;
+}
+
+.qr {
+  background: #ccc;
+  width: 9.375rem;
+  height: 9.375rem;
+  margin: 0 auto 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chave {
+  background: #FFD901;
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.1);
+}
+
+.chave:hover {
+  background: #ffdd33;
+  transform: scale(1.05);
+  box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.chave:active {
+  transform: scale(0.98);
+}
+
+.divisor {
+  width: 60%;
+  height: 0.00625rem;
+  background-color: white;
+  margin: 1.25rem auto;
+  border-radius: 0.125rem;
+}
+
+/* Outras formas */
+.outras {
+  background: #266EFF;
+  padding: 2.5rem 1.25rem;
+  padding-top: 1.25rem;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  padding-bottom: 12.5rem;
+}
+
+.outras h4 {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  color: #fff;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: x-large;
+  padding-bottom: 0.9375rem;
+}
+
+.outras .card {
+  background: #f9f9f9;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 0.9375rem;
+  width: 90%;
+  max-width: 25rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.05);
+}
+
+.icon {
+  font-size: 2.1875rem;
+  flex-shrink: 0;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.texto h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.texto p {
+  margin: 0.3125rem 0 0 0;
+  font-size: 0.9rem;
+  color: #333;
+}
