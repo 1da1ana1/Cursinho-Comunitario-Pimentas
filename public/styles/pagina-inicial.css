@@ -56,7 +56,6 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #e8e8e8;
-  padding: 2rem 1.1rem 3rem 1.1rem;
 }
 
 #about-section h2 {
@@ -98,7 +97,6 @@ h2 {
 
 .card-description {
   font-size: 0.571rem;
-  padding: 0.3rem 1rem 0.5rem 1rem;
 }
 
 #cards .card:nth-child(1) .card-header {
@@ -122,7 +120,6 @@ h2 {
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: contain;
-  padding: 2rem 1.1rem 3rem 1.1rem;
   background-color: #fffeaa;
 }
 
@@ -207,7 +204,6 @@ h2 {
 
 /* como funciona */
 #secao-como-funciona {
-  padding: 2rem 1.1rem 2rem 1.1rem;
   text-align: center;
 }
 
@@ -229,7 +225,6 @@ h2 {
   margin-right: 0;
   width: 100%;
 
-  padding: 0 1.5rem 1rem 1.5rem;
   gap: 1rem;
 }
 .meu-card {
@@ -317,7 +312,6 @@ h2 {
 #secao-equipe {
   background-color: #0d6efd;
   color: #fff;
-  padding: 2rem 1.5rem 1rem 1.5rem;
 }
 
 #secao-equipe h2 {
@@ -340,10 +334,6 @@ h2 {
 }
 
 /*seção alunos pelo brasil*/
-#secao-alunos-brasil {
-  padding: 2rem 1.5rem 1rem 1.5rem;
-}
-
 #secao-alunos-brasil img {
   width: 350px;
   height: auto;
@@ -354,7 +344,6 @@ h2 {
 }
 
 #secao-localizacao {
-  padding: 2rem 1.5rem 1rem 1.5rem;
   background-color: #ffd901;
 }
 

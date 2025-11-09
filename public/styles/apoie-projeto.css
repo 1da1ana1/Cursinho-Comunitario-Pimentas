@@ -49,7 +49,6 @@
 .impacto {
   background: #E8E8E8;
   text-align: center;
-  padding: 2.5rem 1.25rem;
 }
 
 .impacto h3 {
@@ -90,8 +89,7 @@
   background: #266EFF;
   color: white;
   text-align: center;
-  padding: 2.5rem 1.25rem;
-  padding-bottom: 0.0625rem;
+
 }
 
 .pix h3 {
@@ -152,13 +150,10 @@
 /* Outras formas */
 .outras {
   background: #266EFF;
-  padding: 2.5rem 1.25rem;
-  padding-top: 1.25rem;
   align-items: center;
   flex-direction: column;
   display: flex;
   text-align: center;
-  padding-bottom: 12.5rem;
 }
 
 .outras h4 {
