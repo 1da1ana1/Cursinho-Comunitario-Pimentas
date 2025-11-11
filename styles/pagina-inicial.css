@@ -48,6 +48,7 @@ h2 {
   position: relative;
 
   margin-top: 2rem;
+  text-decoration: none;
 }
 
 /*about-section*/
@@ -56,6 +57,7 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #e8e8e8;
+  padding: 2rem 0;
 }
 
 #about-section h2 {
@@ -67,12 +69,11 @@ h2 {
 #cards {
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1rem;
+  margin: 1rem auto 0 auto;
   display: grid;
   justify-items: center;
-  width: 90%;
+  width: 90%; 
+  max-width: 500px; 
   height: fit-content;
 }
 
@@ -81,9 +82,11 @@ h2 {
   display: grid;
   background-color: #fff;
   text-align: left;
-  width: 100%;
-  min-height: 6.11rem;
+  width: 100%; 
+  min-height: 6.11rem; 
   height: auto;
+  border-radius: 5px;
+  overflow: hidden; 
 }
 
 .card-header {
@@ -98,6 +101,7 @@ h2 {
 
 .card-description {
   font-size: 0.571rem;
+  padding: 0.5rem 1rem; 
 }
 
 #cards .card:nth-child(1) .card-header {
@@ -116,12 +120,14 @@ h2 {
   background-color: #d95353;
 }
 
+/* student-section */
 #student-section {
-  background-image: url("/public/images/banners/fundo-student-section.png");
+  background-image: url("../images/banners/fundo-student-section.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: contain;
   background-color: #fffeaa;
+  padding: 2rem 1rem;
 }
 
 #student-section ul {
@@ -130,7 +136,8 @@ h2 {
   border: solid 2px #000;
   border-radius: 1rem;
   padding: 1.5rem 2rem;
-  width: fit-content;
+  width: 90%;
+  max-width: 500px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -201,11 +208,14 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
+  text-decoration: none;
+  color: white;
 }
 
 /* como funciona */
 #secao-como-funciona {
   text-align: center;
+  padding: 2rem 0;
 }
 
 
@@ -217,13 +227,13 @@ h2 {
   overflow-x: auto;
   overflow-y: hidden;
 
-  justify-content: flex-start;
+  
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 
-  margin-left: 0;
-  margin-right: 0;
   width: 100%;
 
   gap: 1rem;
@@ -242,7 +252,7 @@ h2 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  flex-shrink: 0;
+  background-color: white;
 }
 .card-imagem-topo {
   width: 100%;
@@ -254,12 +264,14 @@ h2 {
 .card-conteudo-principal,
 .card-conteudo-links {
   padding: 0.75rem;
+  text-align: left;
 }
 
 .card-titulo {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .card-texto {
@@ -284,7 +296,7 @@ h2 {
   font-size: 0.75rem;
   color: #212529;
   background-color: #fff;
-
+  text-align: left;
   border-bottom: none;
 }
 
@@ -313,39 +325,48 @@ h2 {
 #secao-equipe {
   background-color: #0d6efd;
   color: #fff;
+  padding: 2rem 1rem;
 }
 
 #secao-equipe h2 {
   text-transform: uppercase;
 }
 #secao-equipe p {
-  display: flex;
+  display: block; 
   font-size: 0.8rem;
   text-align: center;
   margin-bottom: 0.6rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #secao-equipe img {
   width: 300px;
   height: auto;
-  display: flex;
+  display: block; 
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin: 1rem auto;
 }
 
 /*seção alunos pelo brasil*/
+#secao-alunos-brasil{
+  padding: 2rem 1rem;
+}
 #secao-alunos-brasil img {
   width: 350px;
   height: auto;
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   margin: auto;
 }
 
+/* secao-localizacao */
 #secao-localizacao {
   background-color: #ffd901;
+  padding: 2rem 1rem;
 }
 
 #secao-localizacao h2{
@@ -361,14 +382,23 @@ h2 {
   text-align: center;
 }
 
-#secao-localização iframe{
+#secao-localizacao iframe{
   cursor: pointer;
 }
 
 #map {
   height: 450px;
+  width: 100%;
+  max-width: 1000px; 
+  margin: 0 auto;
 }
-#endereco {
+
+/*
+  CORREÇÃO 2: O seletor foi renomeado para '#mapa-localizacao'
+  para corresponder ao novo ID do <iframe>.
+  Esta regra não se aplica mais ao <p> do footer.
+*/
+#mapa-localizacao {
   display: block;
   margin: 0 auto;         
   width: 100%;           
@@ -378,36 +408,99 @@ h2 {
   border-radius: 8px;     
 }
 
+
+/* ==================================================================
+   ADAPTAÇÃO DESKTOP (A PARTIR DE 1024px)
+  ==================================================================
+*/
 @media (min-width: 1024px) {
+
+  /* Hero Section */
+  #hero-section {
+    padding: 8rem 4rem; 
+    text-align: left; 
+  }
+
   #hero-section h1 {
     font-size: 4.2rem;
   }
 
   #hero-section p {
     font-size: 1.1rem;
-    max-width: 65ch;
+    max-width: 65ch; 
   }
 
+  #hero-section a {
+    height: 3rem;
+    width: 15rem;
+    font-size: 1.1rem;
+    margin-left: 0; 
+  }
+
+  /* About Section */
   #about-section h2 {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
 
   #cards {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); 
+    max-width: 1200px; 
     gap: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .card {
-    width: 15rem;
+    min-height: 8rem;
   }
 
-  .card-title {
+  .card-header {
     font-size: 1.1rem;
   }
 
   .card-description {
     font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
+
+  /* Student Section */
+  #student-section ul {
+    max-width: 700px; 
+    padding: 2rem 3rem;
+  }
+   #student-section ul li {
+     max-width: none; 
+   }
+  
+  .information-title {
+    font-size: 1rem;
+  }
+  .information-description {
+    font-size: 0.9rem;
+  }
+
+  /* Como Funciona */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    overflow-x: visible; 
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .meu-card {
+    width: 100%; 
+    max-width: none; 
+  }
+  
+  /* Equipe */
+  #secao-equipe {
+    padding: 4rem 2rem;
+  }
+   #secao-equipe p {
+    font-size: 1rem;
+  }
+  #secao-equipe img {
+    width: 400px;
+  }
+
 }

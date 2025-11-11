@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página Inicial</title>
+
+    <!--
+      CORREÇÃO 1: 'global.css' DEVE VIR PRIMEIRO.
+      Isso corrige o footer "flutuante" em telas de desktop.
+    -->
+    <link rel="stylesheet" href="styles/global.css">
+    
     <link rel="stylesheet" href="styles/cabecalho_footer.css" />
     <link rel="stylesheet" href="styles/pagina-inicial.css" />
-    <link rel="stylesheet" href="styles/global.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,6 +38,7 @@
     <header></header>
 
     <main>
+      <!-- ... (hero-section, about-section, etc. - sem mudanças) ... -->
       <section id="hero-section">
         <h1>Vem pro CCP!</h1>
         <p>
@@ -137,6 +144,7 @@
             </div>
           </li>
         </ul>
+
         <a href="processo-seletivo.html"
           >Acessar página do processo seletivo</a
         >
@@ -276,12 +284,16 @@
 
       <section id="secao-localizacao">
         <h2>Onde nos encontrar</h2>
+        <!--
+          CORREÇÃO 2: O ID foi renomeado para evitar conflito
+          com o <p id="endereco"> do footer.
+        -->
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.965257011108!2d-46.407379325073514!3d-23.461717678868393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce6256dd025f71%3A0x9c4a7650681379a2!2sCursinho%20Comunit%C3%A1rio%20Pimentas!5e0!3m2!1spt-BR!2sbr!4v1762304315011!5m2!1spt-BR!2sbr"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          id="endereco"
+          id="mapa-localizacao" 
         ></iframe>
         <p>
           Estamos em R. do Poente, 148 - Conj. Marcos Freire, Guarulhos - SP,
