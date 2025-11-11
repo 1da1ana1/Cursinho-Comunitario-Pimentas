@@ -1,6 +1,6 @@
 /*hero section*/
 #hero-section {
-  background-image: url("/public/images/banners/fundo.png");
+  background-image: url("../images/banners/fundo.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -52,7 +52,7 @@ h2 {
 
 /*about-section*/
 #about-section {
-  background-image: url("/public/images/banners/fundo-about-section.jpg");
+  background-image: url("../images/banners/fundo-about-section.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #e8e8e8;
