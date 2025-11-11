@@ -72,7 +72,7 @@ h2 {
   margin-top: 1rem;
   display: grid;
   justify-items: center;
-  width: fit-content;
+  width: 90%;
   height: fit-content;
 }
 
@@ -81,8 +81,9 @@ h2 {
   display: grid;
   background-color: #fff;
   text-align: left;
-  width: 9.871rem;
-  height: 6.11rem;
+  width: 100%;
+  min-height: 6.11rem;
+  height: auto;
 }
 
 .card-header {
