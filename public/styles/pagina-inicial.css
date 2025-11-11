@@ -93,10 +93,12 @@ h2 {
   justify-content: left;
   font-size: 0.7rem;
   padding: 0.2rem 1rem;
+  height: 1.5rem;
 }
 
 .card-description {
   font-size: 0.571rem;
+  padding: 0.5rem;
 }
 
 #cards .card:nth-child(1) .card-header {
