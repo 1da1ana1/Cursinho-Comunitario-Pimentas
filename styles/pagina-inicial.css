@@ -30,23 +30,16 @@ h2 {
 
 #hero-section a {
   display: flex;
-
   color: black;
-
   border-radius: 0.354rem;
-
   background: #ffd901;
-
   height: 2.241rem;
   width: 12.5rem;
-
   align-items: center;
   justify-content: center;
-
   font-style: italic;
   font-weight: 500;
   position: relative;
-
   margin-top: 2rem;
   text-decoration: none;
 }
@@ -66,23 +59,25 @@ h2 {
   font-weight: 800;
 }
 
+/* CORREÇÃO: Flex para centralizar cards tortos */
 #cards {
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   margin: 1rem auto 0 auto;
-  display: grid;
-  justify-items: center;
   width: 90%; 
-  max-width: 500px; 
-  height: fit-content;
+  max-width: 1200px; 
 }
 
 .card {
   border: solid 1px #343434;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
   text-align: left;
-  width: 100%; 
+  flex: 1 1 200px;
+  max-width: 300px;
   min-height: 6.11rem; 
   height: auto;
   border-radius: 5px;
@@ -104,21 +99,10 @@ h2 {
   padding: 0.5rem 1rem; 
 }
 
-#cards .card:nth-child(1) .card-header {
-  background-color: #83eb52;
-}
-
-#cards .card:nth-child(2) .card-header {
-  background-color: #6fa9ff;
-}
-
-#cards .card:nth-child(3) .card-header {
-  background-color: #ffd901;
-}
-
-#cards .card:nth-child(4) .card-header {
-  background-color: #d95353;
-}
+#cards .card:nth-child(1) .card-header { background-color: #83eb52; }
+#cards .card:nth-child(2) .card-header { background-color: #6fa9ff; }
+#cards .card:nth-child(3) .card-header { background-color: #ffd901; }
+#cards .card:nth-child(4) .card-header { background-color: #d95353; }
 
 /* student-section */
 #student-section {
@@ -212,40 +196,82 @@ h2 {
   color: white;
 }
 
-/* como funciona */
+/* ===========================================================
+   CARROSSEL (ESTILO CORRIGIDO)
+   =========================================================== */
 #secao-como-funciona {
   text-align: center;
   padding: 2rem 0;
 }
 
+/* Wrapper para posicionar setas */
+.carrossel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
 
+/* Estilo das Setas */
+.seta-carrossel {
+  background-color: #333;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.2rem;
+  display: flex; /* Exibe as setas */
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Não deixa a seta amassar */
+  transition: 0.3s;
+}
+
+.seta-carrossel:hover {
+  background-color: #555;
+}
+
+/* Esconde as setas em telas muito pequenas se desejar */
+@media (max-width: 768px) {
+    .seta-carrossel {
+        display: none;
+    }
+}
+
+/* Container deslizante */
 .cards-container {
   display: flex;
-
   flex-wrap: nowrap;
-
   overflow-x: auto;
   overflow-y: hidden;
-
-  
-  padding-left: 1rem;
-  padding-right: 1rem;
-
+  padding: 20px 10px;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-
+  scroll-behavior: smooth;
   width: 100%;
-
   gap: 1rem;
+  
+  /* Esconder barra de rolagem padrão */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
 .meu-card {
   flex-shrink: 0;
   width: 90%;
-  max-width: 15rem;
+  max-width: 15rem; /* Tamanho mobile */
+  min-width: 280px; /* Tamanho mínimo desktop */
   height: auto;
-
   scroll-snap-align: start;
-
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -254,11 +280,11 @@ h2 {
   overflow: hidden;
   background-color: white;
 }
+
 .card-imagem-topo {
   width: 100%;
-  height: auto;
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
+  height: 500px; 
+  object-fit: cover;
 }
 
 .card-conteudo-principal,
@@ -268,23 +294,21 @@ h2 {
 }
 
 .card-titulo {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0;
   font-size: 1rem;
   font-weight: 600;
 }
 
 .card-texto {
-  margin-bottom: 0;
+  margin: 0;
   font-size: 0.8rem;
   color: #495057;
 }
 
 .card-lista-flush {
   padding-left: 0;
-  margin-bottom: 0;
+  margin: 0;
   list-style: none;
-
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -297,7 +321,6 @@ h2 {
   color: #212529;
   background-color: #fff;
   text-align: left;
-  border-bottom: none;
 }
 
 .card-lista-item:not(:last-child) {
@@ -308,20 +331,15 @@ h2 {
   text-decoration: none;
   margin-right: 1rem;
   color: #0d6efd;
-  margin-right: 0.75rem;
   font-size: 0.75rem;
-}
-
-.card-link:hover {
-  text-decoration: underline;
 }
 
 .meu-card .card-conteudo-links {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-/*secao nossa equipe*/
 
+/*secao nossa equipe*/
 #secao-equipe {
   background-color: #0d6efd;
   color: #fff;
@@ -393,11 +411,6 @@ h2 {
   margin: 0 auto;
 }
 
-/*
-  CORREÇÃO 2: O seletor foi renomeado para '#mapa-localizacao'
-  para corresponder ao novo ID do <iframe>.
-  Esta regra não se aplica mais ao <p> do footer.
-*/
 #mapa-localizacao {
   display: block;
   margin: 0 auto;         
@@ -415,7 +428,6 @@ h2 {
 */
 @media (min-width: 1024px) {
 
-  /* Hero Section */
   #hero-section {
     padding: 8rem 4rem; 
     text-align: left; 
@@ -437,13 +449,12 @@ h2 {
     margin-left: 0; 
   }
 
-  /* About Section */
   #about-section h2 {
     font-size: 3rem;
   }
 
+  /* Alinhamento dos cards centrais */
   #cards {
-    grid-template-columns: repeat(4, 1fr); 
     max-width: 1200px; 
     gap: 1.5rem;
   }
@@ -461,35 +472,48 @@ h2 {
     padding: 0.5rem 1rem;
   }
 
-  /* Student Section */
-  #student-section ul {
-    max-width: 700px; 
-    padding: 2rem 3rem;
-  }
-   #student-section ul li {
-     max-width: none; 
-   }
-  
-  .information-title {
-    font-size: 1rem;
-  }
+ #student-section ul {
+        max-width: 40%;
+        padding: 3rem;
+        margin: 0 auto;
+    }
+    #student-section ul li {
+        align-items: center; 
+        gap: 1.5rem; 
+        margin-bottom: 2rem; 
+      }
+
+    /* 3. Sua ideia + Centralização do texto */
+    .text-block {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center; /* Garante que o texto fique centralizado na altura disponível */
+        /* Se você quiser que o texto fique centralizado como um título de jornal, descomente abaixo: */
+        /* text-align: center; */ 
+        /* align-items: center; */
+    }
+
+    .information-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
   .information-description {
     font-size: 0.9rem;
   }
 
-  /* Como Funciona */
+  /* Ajuste do Carrossel no Desktop */
   .cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    overflow-x: visible; 
+    /* Removemos o Grid para manter o carrossel funcional */
+    display: flex; 
+    width: 100%;
     max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
   }
 
   .meu-card {
-    width: 100%; 
-    max-width: none; 
+    /* Tamanho fixo menor no desktop */
+    width: 300px; 
+    max-width: 300px;
   }
   
   /* Equipe */
@@ -502,5 +526,4 @@ h2 {
   #secao-equipe img {
     width: 400px;
   }
-
 }

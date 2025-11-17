@@ -11,6 +11,7 @@ async function loadHTML(selector, file) {
   }
 }
 
+// Função para carregar um script dinamicamente
 function loadScript(src) {
   const script = document.createElement('script');
   script.src = src;
@@ -19,11 +20,9 @@ function loadScript(src) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   await Promise.all([
-    // CAMINHOS CORRIGIDOS (sem / no início)
-    loadHTML("header", "components/header.html"),
-    loadHTML("footer", "components/footer.html")
+    loadHTML("header", "/src/components/header.html"),
+    loadHTML("footer", "/src/components/footer.html")
   ]);
 
-  // CAMINHO CORRIGIDO (sem / no início)
-  loadScript("scripts/script.js");
+  loadScript("/public/scripts/script.js");
 });
