@@ -20,9 +20,11 @@ function loadScript(src) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   await Promise.all([
-    loadHTML("header", "/src/components/header.html"),
-    loadHTML("footer", "/src/components/footer.html")
+    // CAMINHOS CORRIGIDOS (sem / no início)
+    loadHTML("header", "components/header.html"),
+    loadHTML("footer", "components/footer.html")
   ]);
 
-  loadScript("/public/scripts/script.js");
+  // CAMINHO CORRIGIDO (sem / no início)
+  loadScript("scripts/script.js");
 });

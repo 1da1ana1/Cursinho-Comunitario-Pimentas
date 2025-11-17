@@ -4,22 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página Inicial</title>
-
-    <!--
-      CORREÇÃO 1: 'global.css' DEVE VIR PRIMEIRO.
-      Isso corrige o footer "flutuante" em telas de desktop.
-    -->
-    <link rel="stylesheet" href="styles/global.css">
     
+    <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/cabecalho_footer.css" />
     <link rel="stylesheet" href="styles/pagina-inicial.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
+    
     <script src="scripts/includeComponents.js" defer></script>
     <link
       rel="stylesheet"
@@ -37,8 +33,11 @@
   <body>
     <header></header>
 
+    <button class="back-to-top" id="back-to-top-btn" aria-label="Voltar ao topo">
+      <p>▲</p>
+    </button>
+
     <main>
-      <!-- ... (hero-section, about-section, etc. - sem mudanças) ... -->
       <section id="hero-section">
         <h1>Vem pro CCP!</h1>
         <p>
@@ -48,7 +47,7 @@
           de milhares de alunos em universidades renomadas como USP, UNICAMP,
           UNESP e federais.
         </p>
-        <a href="processo-seletivo.html">Quero me matricular</a>
+        <a href="views/processo-seletivo.html">Quero me matricular</a>
       </section>
 
       <section id="about-section">
@@ -103,38 +102,29 @@
               </p>
             </div>
           </li>
-
           <li>
             <span><img src="images/logos/journals.svg" alt="" /></span>
             <div class="text-block">
-              <p class="information-title">
-                2º Se programe e tenha seus documentos em dia
-              </p>
+              <p class="information-title">2º Se programe e tenha seus documentos em dia</p>
               <p class="information-description">
                 Após a orientação no Whastapp, será necessário ter alguns
                 documentos em mãos e suas cópias: rg, cpf, título de eleitor,
-                histórico escolar e o número do cadúnico(impresso). 
+                histórico escolar e o número do cadúnico(impresso).
               </p>
             </div>
           </li>
-
           <li>
             <span><img src="images/logos/clock.svg" alt="" /></span>
-
             <div class="text-block">
-              <p class="information-title">
-                3º Compareça no cursinho pessoalmente
-              </p>
+              <p class="information-title">3º Compareça no cursinho pessoalmente</p>
               <p class="information-description">
                 Seja pontual no dia da inscrição, traga todos os documentos
                 necessários com suas cópias além do café e/ou papel higiênico.
               </p>
             </div>
           </li>
-
           <li>
             <span><img src="images/logos/mailbox.svg" alt="" /></span>
-
             <div class="text-block">
               <p class="information-title">4º Próximos passos</p>
               <p class="information-description">
@@ -145,47 +135,13 @@
           </li>
         </ul>
 
-        <a href="processo-seletivo.html"
-          >Acessar página do processo seletivo</a
-        >
+        <a href="views/processo-seletivo.html">Acessar página do processo seletivo</a>
       </section>
 
        <section id="secao-como-funciona">
         <h2>Como funciona?</h2>
 
         <div class="cards-container">
-          <div class="meu-card">
-            <img
-              src="images/banners/BrasilComS_00412.jpg"
-              class="card-imagem-topo"
-              alt="Descrição da imagem"
-            />
-
-            <div class="card-conteudo-principal">
-              <h5 class="card-titulo">Pré-requisitos</h5>
-              <p class="card-texto">
-                Para poder participar do cursinho, você deve se enquadrar nos seguintes critérios:
-              </p>
-            </div>
-
-            <ul class="card-lista-flush">
-              <li class="card-lista-item">
-                Estar cursando o 3° ano do ensino médio ou concluído.
-                <strong>Não são aceitas exceções</strong>
-              </li>
-              <li class="card-lista-item">
-                Ter disponibilidade para o dia e o horário das aulas.
-              </li>
-              <li class="card-lista-item">
-                Ser responsável, cumprir prazos e compromissos.
-              </li>
-            </ul>
-
-            <div class="card-conteudo-links">
-              <a href="#" class="card-link">Veja noss</a>
-              <a href="#" class="card-link">Outro link</a>
-            </div>
-          </div>
           <div class="meu-card">
             <img
               src="images/banners/BrasilComS_00456.jpg"
@@ -221,72 +177,36 @@
             </div>
           </div>
 
-          <div class="meu-card">
-            <img
-              src="images/banners/BrasilComS_00486.jpg"
-              class="card-imagem-topo"
-              alt="Descrição da imagem"
-            />
+              <div class="meu-card">
+                <img src="images/banners/BrasilComS_00486.jpg" class="card-imagem-topo" alt="Ciclo básico" />
+                <div class="card-conteudo-principal">
+                  <h5 class="card-titulo">Ciclo básico</h5>
+                  <p class="card-texto">Ciclo básico para aprender tudo desde o início. Sem julgamentos!</p>
+                </div>
+                <ul class="card-lista-flush">
+                  <li class="card-lista-item">Obrigatório para todos os alunos ingressantes</li>
+                  <li class="card-lista-item">duração de 3 meses</li>
+                  <li class="card-lista-item">No ritmo de cada um</li>
+                </ul>
+                <div class="card-conteudo-links"><a href="#" class="card-link">Saiba mais</a></div>
+              </div>
 
-            <div class="card-conteudo-principal">
-              <h5 class="card-titulo">Ciclo básico</h5>
-              <p class="card-texto">
-                Não se preocupe caso tenha dificuldades em matemática básica ou
-                lingua portuguesa, sabemos sobre a defasagem do ensino nas
-                escolas públicas e por isso temos o
-                <strong>ciclo básico para aprender tudo desde o início.</strong>
-                Sem julgamentos nem discriminação!
-              </p>
+              <div class="meu-card">
+                <img src="images/banners/BrasilComS_00252.jpg" class="card-imagem-topo" alt="Alimentação" />
+                <div class="card-conteudo-principal">
+                  <h5 class="card-titulo">Alimentação</h5>
+                  <p class="card-texto">Café todos os dias e almoço comunitário aos sábados.</p>
+                </div>
+                <ul class="card-lista-flush">
+                  <li class="card-lista-item">Café quentinho antes das aulas.</li>
+                  <li class="card-lista-item">Doações de frutas e guloseimas.</li>
+                  <li class="card-lista-item">Almoço comunitário com voluntários.</li>
+                </ul>
+                <div class="card-conteudo-links"><a href="#" class="card-link">Saiba mais</a></div>
+              </div>
             </div>
 
-            <ul class="card-lista-flush">
-              <li class="card-lista-item">
-                Obrigatório para todos os alunos ingressantes
-              </li>
-              <li class="card-lista-item">duração de 3 meses</li>
-              <li class="card-lista-item">No ritmo de cada um</li>
-            </ul>
-
-            <div class="card-conteudo-links">
-              <a href="#" class="card-link">Link do Card</a>
-              <a href="#" class="card-link">Outro link</a>
-            </div>
-          </div>
-
-          <div class="meu-card">
-            <img
-              src="images/banners/BrasilComS_00692.jpg"
-              class="card-imagem-topo"
-              alt="Descrição da imagem"
-            />
-
-            <div class="card-conteudo-principal">
-              <h5 class="card-titulo">Alimentação</h5>
-              <p class="card-texto">
-                O cursinho disponibiliza café todos os dias, café da manhã aos
-                fins de semana com almoço comunitário aos sábados.
-              </p>
-            </div>
-
-            <ul class="card-lista-flush">
-              <li class="card-lista-item">
-                Antes das aulas sempre terá um café quentinho
-              </li>
-              <li class="card-lista-item">
-                O cursinho sempre recebe doações, seja de frutas ou guloseimas
-                que ficam disponíveis também.
-              </li>
-              <li class="card-lista-item">
-                O almoço comunitário conta com algum familiar voluntário para
-                prepará-lo.
-              </li>
-            </ul>
-
-            <div class="card-conteudo-links">
-              <a href="#" class="card-link">Link do Card</a>
-              <a href="#" class="card-link">Outro link</a>
-            </div>
-          </div>
+            <button class="seta-carrossel proximo" id="btn-prox">&#10095;</button>
         </div>
       </section>
 
@@ -294,49 +214,38 @@
         <h2>Nossa equipe</h2>
         <p>
           Todos os professores, coordenadores e outros voluntários são ex-alunos
-          do cursinho que já ingressaram na universidade ou já finalizaram o
-          curso.
+          do cursinho que já ingressaram na universidade ou já finalizaram o curso.
         </p>
-        <img
-          src="images/banners/solidarity.png"
-          alt="iamgem de solidariedade"
-        />
+        <img src="images/banners/solidarity.png" alt="imagem de solidariedade" />
         <p>
           Essa ciclo que alimenta o cursinho, deixando ele vivo e pungente com
-          seus voluntários, ex-alunos gratos pela oportunidade, retornam
-          retribuem para os próximos.
+          seus voluntários, ex-alunos gratos pela oportunidade, retornam e retribuem para os próximos.
         </p>
       </section>
 
       <section id="secao-alunos-brasil">
         <h2>Alunos pelo Brasil</h2>
-
         <div id="map"></div>
       </section>
 
       <section id="secao-localizacao">
         <h2>Onde nos encontrar</h2>
-        <!--
-          CORREÇÃO 2: O ID foi renomeado para evitar conflito
-          com o <p id="endereco"> do footer.
-        -->
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.965257011108!2d-46.407379325073514!3d-23.461717678868393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce6256dd025f71%3A0x9c4a7650681379a2!2sCursinho%20Comunit%C3%A1rio%20Pimentas!5e0!3m2!1spt-BR!2sbr!4v1762304315011!5m2!1spt-BR!2sbr"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          id="mapa-localizacao" 
+          id="mapa-localizacao"
         ></iframe>
-        <p>
-          Estamos em R. do Poente, 148 - Conj. Marcos Freire, Guarulhos - SP,
-          07263-721
-        </p>
+        <p>R. do Poente, 148 - Conj. Marcos Freire, Guarulhos - SP, 07263-721</p>
       </section>
     </main>
 
-    
+    <footer></footer>
+
     <script src="scripts/map-config.js"></script>
     <script src="scripts/onde-estamos.js"></script>
-    <footer></footer>
+    <script src="scripts/back-to-top.js"></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
