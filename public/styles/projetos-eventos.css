@@ -94,3 +94,38 @@ main {
     border-width: 0;
     overflow: hidden;
 }
+
+@media (min-width: 1024px){
+    .projetos {
+        padding: 3rem 1rem;
+    }
+
+    .projetos h1 {
+        font-size: 3em;
+        margin-bottom: 3rem;
+    }
+
+    /* AQUI ESTÁ O SEGREDO:
+       Mantemos flex-direction: column (igual mobile)
+       Mas limitamos a largura (max-width) para não ficar feio/esticado
+    */
+    .projeto-card {
+        flex-direction: column; /* Força manter o layout vertical */
+        max-width: 700px; /* Largura máxima elegante para desktop */
+        margin-bottom: 3rem;
+        /* O 'align-items: center' no container .projetos já centraliza o card */
+    }
+
+    .projeto-imagem {
+        height: 400px; /* Imagem maior para telas grandes */
+    }
+
+    .projeto-texto {
+        padding: 2.5rem; /* Mais respiro no texto */
+    }
+
+    .projeto-texto h2 {
+        font-size: 2rem;
+    }
+
+}

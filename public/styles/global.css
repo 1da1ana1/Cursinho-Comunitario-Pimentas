@@ -14,10 +14,10 @@
   font-family: "Poppins", sans-serif; 
 }
 
-
 html {
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth; /* Rolagem suave nativa */
 }
 
 body {
@@ -56,5 +56,41 @@ p {
 
 section {
   padding: 2rem 1.5rem 1rem 1.5rem;
+}
 
+/* BOTÃO BACK TO TOP CORRIGIDO */
+.back-to-top {
+  background-color: #38322e;
+  border-radius: 50%; /* Redondo */
+  bottom: 20px;
+  box-shadow: 2px 3px 19px -2px rgba(0, 0, 0, .75);
+  color: #d9a000;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 20px;
+  z-index: 9999;
+  border: none;
+  
+  /* Centralizar o ícone */
+  display: none; /* Oculto por padrão */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: #000;
+  transform: scale(1.1);
+}
+
+/* Classe adicionada pelo JS */
+.back-to-top.show {
+  display: flex;
+}
+
+.back-to-top p{
+  font-size: 2rem;
 }
