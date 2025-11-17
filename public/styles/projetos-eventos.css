@@ -1,9 +1,4 @@
-/* Resets e Padrões Globais */
-body {
-    background-color: #f0f0f0; 
-    font-family: Arial, sans-serif; 
-    /* Assumindo 16px = 1rem para a conversão */
-}
+
 
 
 main {
@@ -19,7 +14,7 @@ main {
 
 .projetos h1 {
     text-align: center;
-    font-size: 2em;
+    font-size: 2rem;
     margin-bottom: 1.25rem;
 }
 
@@ -68,12 +63,12 @@ main {
 }
 
 .projeto-card h2 {
-    font-size: 1.8em;
+    font-size: 1.8rem;
     margin-bottom: 0.9375rem;
 }
 
 .projeto-card p {
-    font-size: 1em;
+    font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 0.625rem;
     text-align: justify;

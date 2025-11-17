@@ -1,3 +1,8 @@
+/* /public/styles/global.css (VERSÃO CORRIGIDA) */
+
+/* Importa a fonte para dislexia */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
   --cor-primaria: #990100;    
   --cor-secundaria: #0056b3;
@@ -5,32 +10,46 @@
   --cor-fundo: #f0f0f0;    
   --cor-texto: #333333;      
   --cor-branca: #ffffff;
+
+  /* NOSSAS VARIÁVEIS DE ACESSIBILIDADE */
+  --font-family-base: "Poppins", sans-serif;
+  --font-size-base: 16px;
+}
+
+/* Classe que o JS vai ativar */
+body.dyslexia-font {
+  --font-family-base: 'Atkinson Hyperlegible', sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif; 
+  /* A fonte foi removida daqui */
 }
-
 
 html {
   height: 100%;
   overflow-x: hidden;
+  /* Aplica o tamanho da fonte base */
+  font-size: var(--font-size-base);
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh; 
-  background-color: var(--cor-fundo); 
+  background-color: var(--cor-fundo);
+  /* Aplica a família da fonte base */
+  font-family: var(--font-family-base);
 }
 
 main {
   flex: 1;
 }
 
+/* O resto do seu global.css está ótimo, 
+   pois já usa REM! */
 h1 {
   font-size: 2.5rem;  
   font-weight: 800;
@@ -56,5 +75,187 @@ p {
 
 section {
   padding: 2rem 1.5rem 1rem 1.5rem;
+}
 
+/* * ===========================================
+ * CSS DO MODO ALTO CONTRASTE
+ * ===========================================
+ */
+
+ body.high-contrast {
+  /* 1. Redefine as variáveis de cor globais */
+  --cor-fundo: #000 !important;
+  --cor-texto: #fff !important;
+  --cor-branca: #000 !important; /* Fundo de 'cards' brancos vira preto */
+  --cor-destaque: #ffff00 !important; /* Amarelo-limão é ótimo para links/destaques */
+  --cor-primaria: #ffff00 !important;
+  --cor-secundaria: #000 !important;
+
+  /* 2. Remove imagens de fundo que atrapalham */
+  background-image: none !important;
+  background-color: #000 !important; /* Garante que o body seja preto */
+  color: #fff !important; /* Garante que o texto geral seja branco */
+}
+
+/* 3. Garante que seções com fundos coloridos
+      ou imagens de fundo fiquem pretas */
+body.high-contrast section,
+body.high-contrast div,
+body.high-contrast nav,
+body.high-contrast main,
+body.high-contrast header,
+body.high-contrast footer,
+body.high-contrast article,
+body.high-contrast .hero,
+body.high-contrast .pix,
+body.high-contrast .outras,
+body.high-contrast .Azul,
+body.high-contrast .green,
+body.high-contrast .red,
+body.high-contrast .projeto-texto.azul,
+body.high-contrast .projeto-texto.amarelo {
+  background-image: none !important;
+  background-color: #000 !important; /* Força fundo preto */
+  color: #fff !important; /* Força texto branco */
+}
+
+/* 4. Especificamente para o overlay do hero, garantir que suma ou seja preto */
+body.high-contrast .hero::before {
+  background-color: #000 !important; /* Fundo preto puro */
+  opacity: 1 !important; /* Garante que ele fique visível, mas preto */
+}
+
+
+/* 5. Força links e botões a terem alto contraste */
+body.high-contrast a,
+body.high-contrast button {
+  color: var(--cor-destaque) !important; /* Amarelo */
+  border-color: var(--cor-destaque) !important; /* Borda amarela */
+  text-decoration: underline !important; /* Links sempre sublinhados */
+  background-color: transparent !important; /* Remove qualquer background estranho */
+}
+
+/* 6. Garante que o texto dentro dos botões
+      coloridos específicos (que queremos que sejam amarelos com texto preto) */
+body.high-contrast #hero-section a,
+body.high-contrast .chave,
+body.high-contrast .botao-whatsapp,
+body.high-contrast .menu-acessibilidade-popup button { /* Adicionado o popup aqui */
+  color: #000 !important; /* Texto preto */
+  background-color: var(--cor-destaque) !important; /* Fundo amarelo */
+  border: 1px solid #000 !important; /* Borda preta */
+}
+
+/* 7. Adiciona bordas em cards e listas para separá-los do fundo */
+body.high-contrast .card,
+body.high-contrast .meu-card,
+body.high-contrast #student-section ul,
+body.high-contrast .pix-box { /* Adicionado pix-box */
+  border: 2px solid var(--cor-destaque) !important; /* Borda amarela */
+  background-color: #000 !important; /* Fundo do card preto */
+}
+
+
+/* 8. Garante que todo o texto seja branco (exceto os botões amarelos) */
+body.high-contrast p,
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast h4,
+body.high-contrast h5,
+body.high-contrast li,
+body.high-contrast .text-block p, /* Ajustado o seletor para pegar o texto */
+body.high-contrast .text-block .information-title,
+body.high-contrast .text-block .information-description,
+body.high-contrast .card-header, /* Cabeçalho do card */
+body.high-contrast .card-description, /* Descrição do card */
+body.high-contrast .card-titulo,
+body.high-contrast .card-texto {
+  color: #fff !important;
+}
+
+/* 9. Garante que os ícones fiquem visíveis */
+body.high-contrast .icon,
+body.high-contrast #student-section img { /* Inclui as imagens da seção student */
+  filter: invert(1) brightness(2) !important; /* Inverte a cor e dá brilho */
+}
+
+/* 10. Ajusta o popup de acessibilidade para alto contraste */
+body.high-contrast .menu-acessibilidade-popup {
+  background-color: #000 !important;
+  border: 2px solid var(--cor-destaque) !important;
+  color: #fff !important;
+}
+
+body.high-contrast .menu-acessibilidade-popup .popup-titulo,
+body.high-contrast .menu-acessibilidade-popup .popup-label {
+  color: #fff !important;
+}
+
+body.high-contrast .menu-acessibilidade-popup .btn-fechar-popup {
+  color: #fff !important; /* X branco */
+  background-color: transparent !important;
+}
+
+body.high-contrast .menu-acessibilidade-popup button:hover {
+  background-color: var(--cor-destaque) !important;
+  color: #000 !important;
+}
+
+/* Se tiver algum `border-bottom` que quebre, ajuste aqui */
+body.high-contrast #about-section .card-header {
+    border-bottom: 1px solid var(--cor-destaque) !important;
+}
+
+body.high-contrast .card-lista-flush {
+    border-top: 1px solid var(--cor-destaque) !important;
+    border-bottom: 1px solid var(--cor-destaque) !important;
+}
+
+body.high-contrast .card-lista-item:not(:last-child) {
+    border-bottom: 1px solid var(--cor-destaque) !important;
+}
+
+/* 1. Força o popup de acessibilidade a ficar escuro */
+body.high-contrast .menu-acessibilidade-popup {
+  background-color: #000 !important;
+  border-color: var(--cor-destaque) !important;
+}
+
+body.high-contrast .menu-acessibilidade-popup p {
+  color: #fff !important;
+}
+
+/* 2. Força os cards da seção "Como Funciona" (Pré-requisitos, etc.) */
+body.high-contrast .meu-card {
+  background-color: #000 !important;
+  border-color: var(--cor-destaque) !important;
+}
+
+/* 3. Força o texto DENTRO desses cards (Títulos, parágrafos) */
+body.high-contrast .meu-card .card-titulo,
+body.high-contrast .meu-card .card-texto {
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+/* 4. Força os itens da lista (os quadrados brancos) a ficarem escuros */
+body.high-contrast .meu-card .card-lista-flush,
+body.high-contrast .meu-card .card-lista-item {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: var(--cor-destaque) !important;
+}
+
+/* 5. Força os cards da "about-section" (os 4 cards coloridos) */
+body.high-contrast #about-section .card {
+    background-color: #000 !important;
+    border-color: var(--cor-destaque) !important;
+}
+
+body.high-contrast #about-section .card-header,
+body.high-contrast #about-section .card-description {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: var(--cor-destaque) !important;
 }

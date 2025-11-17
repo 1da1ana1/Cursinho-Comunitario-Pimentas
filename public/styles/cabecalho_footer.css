@@ -237,3 +237,96 @@ footer{
     
 }
 
+/* --- Estilos do Widget de Acessibilidade --- */
+
+/* 1. O botão principal (o ícone ♿) */
+.botao-acessibilidade-mobile {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem; /* Oposto ao "left: 1.5rem" do sandwich */
+    top: 50%; 
+    transform: translateY(-50%);
+    color: white; /* Mesmo cor do sandwich */
+    font-size: 2.2rem; /* Tamanho similar */
+  }
+  
+  /* 2. O Popup (o container das opções) */
+  .menu-acessibilidade-popup {
+    position: fixed; /* Fica por cima de tudo */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 90%; /* Ocupa 90% da largura no mobile */
+    max-width: 380px; /* Mas no máximo 380px no desktop */
+    
+    background-color: #fff; /* Fundo branco */
+    color: #000; /* Texto preto */
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 1rem;
+    z-index: 1000; /* Garante que fique na frente */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    text-align: center;
+  }
+  
+  /* 3. A classe para esconder/mostrar */
+  .menu-acessibilidade-popup.hidden {
+    display: none;
+  }
+  
+  /* 4. Estilos internos do Popup */
+  .menu-acessibilidade-popup .popup-titulo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+  }
+  
+  .menu-acessibilidade-popup .popup-grupo {
+    margin-bottom: 1rem;
+  }
+  
+  .menu-acessibilidade-popup .popup-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-align: left;
+    color: #333;
+  }
+  
+  .menu-acessibilidade-popup button {
+    padding: 0.5rem 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: #000;
+    border-radius: 4px;
+  }
+  
+  .menu-acessibilidade-popup button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Botão de Fechar (o 'X' no canto) */
+  .menu-acessibilidade-popup .btn-fechar-popup {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+  }
+  .menu-acessibilidade-popup .btn-fechar-popup:hover {
+    color: #000;
+  }
