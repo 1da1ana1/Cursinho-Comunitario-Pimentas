@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const botaoMenu = document.getElementById('botao-menu');
     const navMenu = document.getElementById('nav-menu');
     
-    // Verificação de segurança para não dar erro se o elemento não existir
     if(botaoMenu && navMenu) {
         botaoMenu.addEventListener('click', () => {
             navMenu.classList.toggle('ativo');
@@ -14,15 +13,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =====================================================
-    // 2. CARROSSEL DE CARDS (Página Inicial)
+    // 2. LÓGICA DO BOTÃO PIX (NOVO)
     // =====================================================
-    // Mantivemos este funcionando pois ele é diferente do da história
+    function setupPixCopy() {
+        // Procura o botão pela classe .chave usada na página Apoie
+        const pixBtn = document.querySelector('.chave');
+        
+        if(pixBtn) {
+            pixBtn.addEventListener('click', () => {
+                const pixKey = 'pixcursinho@gmail.com';
+                
+                // Tenta copiar para a área de transferência
+                navigator.clipboard.writeText(pixKey).then(() => {
+                    // Feedback Visual: Muda texto e cor
+                    const textoOriginal = pixBtn.innerText;
+                    const corOriginal = pixBtn.style.backgroundColor;
+                    
+                    pixBtn.innerText = 'Chave Copiada!';
+                    pixBtn.style.backgroundColor = '#25D366'; // Verde WhatsApp
+                    pixBtn.style.color = '#fff';
+                    pixBtn.style.border = 'none';
+
+                    // Volta ao normal após 2 segundos
+                    setTimeout(() => {
+                        pixBtn.innerText = textoOriginal;
+                        pixBtn.style.backgroundColor = corOriginal;
+                        pixBtn.style.color = ''; // Volta cor original definida no CSS
+                        pixBtn.style.border = '';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Erro ao copiar:', err);
+                    // Fallback caso o navegador bloqueie
+                    alert('A chave PIX é: ' + pixKey);
+                });
+            });
+        }
+    }
+    setupPixCopy();
+
+    // =====================================================
+    // 3. CARROSSEL DE CARDS (Página Inicial)
+    // =====================================================
     const scrollContainer = document.getElementById('scroll-container');
     const btnAnt = document.getElementById('btn-ant');
     const btnProx = document.getElementById('btn-prox');
 
     if (scrollContainer && btnAnt && btnProx) {
-        // Clique nas setas
         btnProx.addEventListener('click', () => {
             scrollContainer.scrollBy({ left: 320, behavior: 'smooth' });
         });
@@ -31,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollContainer.scrollBy({ left: -320, behavior: 'smooth' });
         });
 
-        // Arrastar com Mouse (Desktop)
+        // Arrastar com Mouse
         let isDown = false;
         let startX;
         let scrollLeft;
@@ -54,14 +90,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =====================================================
-    // 3. CARROSSEL DE IMAGENS (Sua Nova Lógica)
+    // 4. CARROSSEL DE IMAGENS (História)
     // =====================================================
     function setupCarousel() {
         const carousel = document.querySelector('.slide1');
-        if (!carousel) return; // Se não houver carrossel na página, para aqui
+        if (!carousel) return; 
 
         const sliders = carousel.querySelector('.sliders');
-        // O seletor :scope garante que pegamos apenas os inputs diretos deste carrossel
         const radioInputs = carousel.querySelectorAll(':scope > input[name="radio-btn"]');
         
         if (!sliders || radioInputs.length === 0) return;
@@ -69,52 +104,30 @@ document.addEventListener('DOMContentLoaded', () => {
         let isDragging = false;
         let startX;
         let currentSlide = 0;
-        let carouselWidth = carousel.offsetWidth; // Largura do carrossel
+        let carouselWidth = carousel.offsetWidth;
 
-        // --- FUNÇÃO PRINCIPAL DE MOVIMENTO ---
         function goToSlide(index, animate = true) {
-            // Garante que o índice está dentro dos limites
             index = Math.max(0, Math.min(index, radioInputs.length - 1));
-            
-            // 1. Calcula o novo translate em pixels (negativo para mover para a esquerda)
             const newTransform = -(index * carouselWidth);
-            
-            // 2. Aplica a animação (ou não, se for durante o arraste ou resize)
             sliders.style.transition = animate ? 'transform 0.4s ease-in-out' : 'none';
             sliders.style.transform = `translateX(${newTransform}px)`;
-            
-            // 3. Atualiza o radio button (para as bolinhas de navegação)
-            if (radioInputs[index] && !radioInputs[index].checked) {
-                 radioInputs[index].checked = true;
-            }
-            
-            // 4. Armazena o slide atual
+            if (radioInputs[index] && !radioInputs[index].checked) radioInputs[index].checked = true;
             currentSlide = index;
         }
 
-        // --- FUNÇÕES DE ARRASTAR (DRAG) ---
         function dragStart(e) {
             isDragging = true;
-            // Pega a posição inicial do mouse ou do dedo
             startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-            currentSlide = getCheckedIndex(); // Sincroniza com o slide atual real
-            carouselWidth = carousel.offsetWidth; // Recalcula a largura (segurança)
-            
-            sliders.style.transition = 'none'; // Desliga animação para resposta imediata
+            currentSlide = getCheckedIndex();
+            carouselWidth = carousel.offsetWidth;
+            sliders.style.transition = 'none';
             carousel.style.cursor = 'grabbing';
         }
 
         function dragMove(e) {
             if (!isDragging) return;
-            // No mobile, previne o scroll da tela se estiver arrastando muito horizontalmente
-            if (e.type.includes('touch')) {
-                 // Opcional: lógica para permitir scroll vertical se necessário
-            } 
-            
             const currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-            const diffX = currentX - startX; // Distância arrastada
-            
-            // Calcula a posição em tempo real: Posição Base + Deslocamento
+            const diffX = currentX - startX;
             const baseTranslate = -(currentSlide * carouselWidth);
             sliders.style.transform = `translateX(${baseTranslate + diffX}px)`;
         }
@@ -123,26 +136,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isDragging) return;
             isDragging = false;
             carousel.style.cursor = 'grab';
-
             const currentX = e.type.includes('mouse') ? e.pageX : e.changedTouches[0].clientX;
             const diffX = currentX - startX;
-            
-            // Define o limite para trocar de slide (20% da largura)
             const threshold = carouselWidth / 5; 
 
-            if (diffX > threshold) {
-                // Arrastou para a direita -> Voltar slide
-                goToSlide(currentSlide - 1); 
-            } else if (diffX < -threshold) {
-                // Arrastou para a esquerda -> Avançar slide
-                goToSlide(currentSlide + 1);
-            } else {
-                // Não arrastou o suficiente -> Volta para o centro do slide atual
-                goToSlide(currentSlide);
-            }
+            if (diffX > threshold) goToSlide(currentSlide - 1); 
+            else if (diffX < -threshold) goToSlide(currentSlide + 1);
+            else goToSlide(currentSlide);
         }
         
-        // Função helper para descobrir qual bolinha está marcada
         function getCheckedIndex() {
             for (let i = 0; i < radioInputs.length; i++) {
                 if (radioInputs[i].checked) return i;
@@ -150,46 +152,29 @@ document.addEventListener('DOMContentLoaded', () => {
             return 0;
         }
 
-        // --- ADICIONA OS EVENTOS ---
         carousel.style.cursor = 'grab';
-        
-        // Desktop (Mouse)
         sliders.addEventListener('mousedown', dragStart);
         sliders.addEventListener('mousemove', dragMove);
         sliders.addEventListener('mouseup', dragEnd);
         sliders.addEventListener('mouseleave', dragEnd);
-        
-        // Mobile (Touch)
-        // 'passive: true' melhora a performance do scroll, mas 'passive: false' seria necessário se quisesse usar e.preventDefault() no touchmove
         sliders.addEventListener('touchstart', dragStart, { passive: true });
         sliders.addEventListener('touchmove', dragMove); 
         sliders.addEventListener('touchend', dragEnd);
-        
-        // Impede que o navegador tente arrastar a imagem como um arquivo
-        sliders.querySelectorAll('img').forEach(img => {
-            img.addEventListener('dragstart', (e) => e.preventDefault());
-        });
+        sliders.querySelectorAll('img').forEach(img => img.addEventListener('dragstart', (e) => e.preventDefault()));
 
-        // Clique nas bolinhas de navegação
         radioInputs.forEach((radio, index) => {
             radio.addEventListener('change', () => {
-                // Atualiza largura caso a tela tenha mudado
                 carouselWidth = carousel.offsetWidth;
                 goToSlide(index);
             });
         });
 
-        // Redimensionamento da tela
         window.addEventListener('resize', () => {
              carouselWidth = carousel.offsetWidth;
-             // Recalcula posição sem animação para não "pular"
              goToSlide(getCheckedIndex(), false);
         });
-
-        // Inicialização
         goToSlide(getCheckedIndex(), false);
     }
 
-    // Inicializa o carrossel de história
     setupCarousel();
 });
