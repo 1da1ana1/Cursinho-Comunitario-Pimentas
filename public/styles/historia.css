@@ -1,3 +1,4 @@
+/* backup/styles/historia.css */
 
 .slide1 {
     margin: 2rem auto; 
@@ -7,16 +8,21 @@
     overflow: hidden;
     position: relative;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra leve para destaque */
 }
 
+/* CORREÇÃO: Container com 100% de largura e transição no transform */
 .sliders {
-    width: 600%; 
+    width: 100%; 
     height: 100%;
     display: flex;
+    transition: transform 0.5s ease-in-out; /* Suavidade no movimento */
 }
 
+/* CORREÇÃO: Cada slide ocupa 100% do container visível */
 .slide {
-    width: 16.6666%; 
+    width: 100%;
+    flex: 0 0 100%; /* Impede que o slide encolha */
     height: 100%;
 }
 
@@ -26,6 +32,7 @@
     object-fit: cover; 
 }
 
+/* Inputs escondidos */
 .slide1 input {
     display: none;
 }
@@ -37,6 +44,7 @@
     transform: translateX(-50%);
     display: flex;
     gap: 15px;
+    z-index: 10; /* Garante que fique acima da imagem */
 }
 
 .manual-btn {
@@ -45,46 +53,27 @@
     border-radius: 50%;
     cursor: pointer;
     transition: 0.3s;
+    background-color: transparent;
 }
 
 .manual-btn:hover {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-#radio1:checked ~ .manual-navigation .manual-btn[for='radio1'] {
-    background-color: white;
-}
-#radio2:checked ~ .manual-navigation .manual-btn[for='radio2'] {
-    background-color: white;
-}
-#radio3:checked ~ .manual-navigation .manual-btn[for='radio3'] {
+/* Estilo do botão ativo */
+.manual-btn.active {
     background-color: white;
 }
 
-#radio4:checked ~ .manual-navigation .manual-btn[for='radio4'] {
-    background-color: white;
-}
-#radio5:checked ~ .manual-navigation .manual-btn[for='radio5'] {
-    background-color: white;
-}
-#radio6:checked ~ .manual-navigation .manual-btn[for='radio6'] {
-    background-color: white;
-}
-
-h1{
+/* Títulos e Seções */
+h1 {
     text-align: center;
     font-style: italic;
     color: white;
 }
-.Azul{
-    background-color:#266EFF;
-}
-.Azul p{
-    text-align: center;
-    color: white;
-    margin: 0 5%;
 
-}
+.Azul { background-color:#266EFF; }
+.Azul p { text-align: center; color: white; margin: 0 5%; }
 
 /* VERSÃO MOBILE */
 @media (max-width: 768px) {
@@ -102,12 +91,13 @@ h1{
     }
 }
 
+/* Espaçamentos Globais */
 .Azul, .green, .red {
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
 
-.Azul p, .green p {
+.Azul p, .green p, .red p {
     max-width: 800px;
     text-align: center;  
     margin-left: auto;  
@@ -115,110 +105,33 @@ h1{
     padding: 0 1rem;  
 }
 
-/* 4. Adiciona espaço entre o parágrafo inicial e o carrossel */
-.Azul h1 + p {
-    margin-bottom: 2rem;
-}
+.Azul h1 + p { margin-bottom: 2rem; }
 
-.espaço img, .financiamento img, .voluntarios img, .cidadã img, .autonomia img, .acolhimento img {
-    width: 150px;
-    height: 150px;     
+/* Ícones das seções */
+.espaço img, .financiamento img, .voluntarios img, 
+.cidadã img, .autonomia img, .acolhimento img {
+    width: 100px; /* Reduzi levemente para caber melhor */
+    height: 100px;     
     object-fit: contain; 
-    margin: 0 auto;      
-    margin-bottom: 1.5rem; 
-    display: flex;
+    margin: 0 auto 1.5rem auto;      
+    display: block;
 }
-
 
 .espaço, .financiamento, .voluntarios, .cidadã, .autonomia, .acolhimento {
     margin-bottom: 3rem;
-}
-
-.voluntarios, .acolhimento {
-    margin-bottom: 0;
-}
-
-.h1green, .h1red, .green h1, .red h1 {
-    margin-bottom: 3rem !important;
-}
-
-.h1green{
-    background-color: #3CBC00;
-    color: white;
-    font-style: italic;
-    margin-bottom: 10%;
-}
-
-.green{
-    background-color: #3CBC00;
-
-}
-
-
-.green p{
-    color: white;
     text-align: center;
 }
 
-.espaço img{
-    width: 30%;
-    margin: 0 auto;
-    margin-bottom: 5%;
-    display: flex;
-}
+.voluntarios, .acolhimento { margin-bottom: 0; }
 
+.h1green, .h1red, .green h1, .red h1 { margin-bottom: 3rem !important; }
 
-.financiamento img{
+/* Seção Verde */
+.green { background-color: #3CBC00; }
+.green p { color: white; }
+.h1green { background-color: #3CBC00; color: white; font-style: italic; }
 
-    width: 30%;
-    margin: 0 auto;
-    margin-bottom: 5%;
-    display: flex;
-}
-
-
-.voluntarios img{
-    width: 30%;
-    margin: 0 auto;
-    margin-bottom: 5%;
-    display: flex;
-}
-
-.red{
-    background-color: #B90504;;
-}
-
-.cidadã img{
-    width: 30%;
-    margin: 0 auto;
-    margin-bottom: 5%;
-    display: flex;
-}
-
-
-.autonomia img{
-
-    width: 30%;
-    margin: 0 auto;
-    margin-bottom: 5%;
-    display: flex;
-}
-
-
-.acolhimento img{
-    width: 30%;
-    margin: 0 auto;
-    margin-bottom: 3%;
-    display: flex;
-}
-
-
-.red p{
-    color: white;
-    max-width: 800px;
-    text-align: center;  
-    margin-left: auto;  
-    margin-right: auto; 
-    padding: 0 1rem; 
-}
-
+/* Seção Vermelha */
+.red { background-color: #B90504; }
+.red p { color: white; }
+.h1red { color: white; font-style: italic; }

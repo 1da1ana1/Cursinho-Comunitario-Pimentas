@@ -8,92 +8,77 @@
   <link rel="stylesheet" href="/public/styles/cabecalho_footer.css">
   <link rel="stylesheet" href="/public/styles/global.css">
   <link rel="stylesheet" href="/public/styles/apoie-projeto.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
-
+  
   <script src="/public/scripts/includeComponents.js" defer></script>
+  <script src="/public/scripts/script.js" defer></script>
 </head>
 
 <body>
-  <header></header>
+  <header role="banner"></header>
 
-  <main class="doacoes">
+  <main class="doacoes" id="conteudo-principal" tabindex="-1">
     <button class="back-to-top" id="back-to-top-btn" aria-label="Voltar ao topo">
       <p>▲</p>
     </button>
-    <section class="hero">
+    <section class="hero" aria-labelledby="titulo-hero">
       <div class="overlay">
-        <h2>Sua doação<br> transforma<br> futuros</h2>
-        <p>O Cursinho Comitário Pimentas é 100% gratuito e mantido por voluntários e doações. 
-        Com a sua ajuda, continuamos oferecendo educação popular e oportunidades reais de acesso ao ensino superior.</p>
+        <h1 id="titulo-hero">Sua doação transforma futuros</h1>
+        <p>
+          O Cursinho Comunitário Pimentas é 100% gratuito e mantido por voluntários e doações.
+        </p>
       </div>
     </section>
 
-    <section class="impacto">
-      <h3>Veja o impacto <br>da sua doação</h3>
+    <section class="impacto" aria-labelledby="titulo-impacto">
+      <h2 id="titulo-impacto">Veja o impacto da sua doação</h2>
       <div class="cards">
         <div class="card">
-          <img src="/public/images/logos/album.svg" alt="Ícone de livro" class="icon">
-          <h4>Com R$30</h4>
-          <p>Contribui para a compra de materiais de estudo e impressão de simulados usados em sala de aula.</p>
+          <img src="/public/images/logos/album.svg" alt="Ícone papel A+" class="icon">
+          <h3>Com R$30</h3>
+          <p>Contribui para a compra de materiais de estudo.</p>
         </div>
-
         <div class="card">
-          <img src="/public/images/logos/apple.svg" alt="Ícone de maçã" class="icon">
-          <h4>Com R$70</h4>
-          <p>Ajuda na manutenção do espaço físico e nas atividades complementares, como oficinas e saraus.</p>
+          <img src="/public/images/logos/apple.svg" alt="Ícone maçã" class="icon">
+          <h3>Com R$70</h3>
+          <p>Ajuda na manutenção do espaço físico e lanches.</p>
         </div>
-
         <div class="card">
-          <img src="/public/images/logos/graduation-cap.svg" alt="Ícone de formatura" class="icon">
-          <h4>Com R$150</h4>
-          <p>Garante a continuidade do projeto e apoia diretamente a formação de mais alunos prontos para o vestibular.</p>
+          <img src="/public/images/logos/graduation-cap.svg" alt="Ícone capelo" class="icon">
+          <h3>Com R$150</h3>
+          <p>Garante a continuidade do projeto.</p>
         </div>
       </div>
     </section>
 
-    <section class="pix">
-      <h3>FAÇA AGORA UMA DOAÇÃO</h3>
+    <section class="pix" aria-labelledby="titulo-pix">
+      <h2 id="titulo-pix">Faça agora uma doação</h2>
       <div class="pix-box">
-        <div class="qr">QR code PIX</div>
-        <button class="chave">Copiar chave</button>
-        <p>Dados: XXXXXXXXXXXXXX</p>
-        <p>Qualquer valor faz a diferença para manter viva a missão do Cursinho Comunitário Pimentas.</p>
+        <img src="/public/images/chavepix/chavepix.jpg" alt="QR code PIX" class="qr-img" height="200rem">
+        <button class="chave" aria-label="Copiar chave PIX">Copiar chave</button>
+        <p><strong>Chave PIX:</strong> pixcursinho@gmail.com</p>
       </div>
     </section>
 
-    <section class="outras">
-      <div class="divisor"></div>
-      <h4>Outras formas de contribuição</h4>
-
+    <section class="outras" aria-labelledby="titulo-outras">
+      <div class="divisor" aria-hidden="true"></div>
+      <h2 id="titulo-outras">Outras formas de contribuição</h2>
+      
       <div class="card">
-        <img src="/public/images/logos/library-big (1).svg" alt="Ícone de estante de livros" class="icon">
+        <img src="/public/images/logos/library-big (1).svg" alt="Ícone livros" aria-hidden="true" class="icon">
         <div class="texto">
-          <h5>Doe materiais</h5>
-          <p>Você pode apoiar doando livros, apostilas, papéis e outros materiais escolares que serão usados nas aulas e simulados.</p>
+          <h3>Doe materiais</h3>
+          <p>Livros, apostilas e materiais escolares.</p>
         </div>
       </div>
-
-      <div class="card">
-        <img src="/public/images/logos/megaphone (1).svg" alt="Ícone de megafone" class="icon">
-        <div class="texto">
-          <h5>Divulgue nossa causa</h5>
-          <p>Compartilhe o projeto nas redes sociais e ajude mais pessoas a conhecerem o cursinho e suas iniciativas.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="/public/images/logos/handshake.svg" alt="Ícone de aperto de mãos" class="icon">
-        <div class="texto">
-          <h5>Seja voluntário</h5>
-          <p>Faça parte da nossa equipe! O cursinho é mantido por pessoas que acreditam na transformação pela educação e doam seu tempo e conhecimento.</p>
-        </div>
-      </div>
+      
+      <a href="https://wa.me/5511995198207" class="botao-whatsapp">
+        Clique aqui para falar no WhatsApp
+      </a>
     </section>
   </main>
 
-  <footer></footer>
+  <footer role="contentinfo"></footer>
   <script src="/public/scripts/back-to-top.js"></script>
-</body>
+  </body>
 </html>

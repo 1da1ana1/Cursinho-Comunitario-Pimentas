@@ -1,13 +1,47 @@
 <header>
   <div class="cabecalho-superior">
+    
     <button id="botao-menu" class="botao-menu-mobile">
       ☰
     </button>
+    
     <div class="logo-container">
-      <a href="/src/views/index.html">  
+      <a href="/src/views/index.html">
         <img src="/public/images/logos/logo_ccp.png" alt="logo-cursinho" class="logo-ccp">
       </a>
       <p>CURSINHO COMUNITÁRIO PIMENTAS</p>
+    </div>
+
+    <div class="widget-acessibilidade">
+      
+      <button id="btn-acessibilidade-toggle" class="botao-acessibilidade-mobile" title="Abrir menu de acessibilidade">
+        ♿
+      </button>
+
+      <div id="menu-acessibilidade-popup" class="menu-acessibilidade-popup hidden">
+        
+        <button id="btn-acessibilidade-close" class="btn-fechar-popup" title="Fechar menu">&times;</button>
+        
+        <p class="popup-titulo">Acessibilidade</p>
+        
+        <div class="popup-grupo">
+          <p class="popup-label">Tamanho da Fonte</p>
+          <button id="font-increase" title="Aumentar fonte">A+</button>
+          <button id="font-decrease" title="Diminuir fonte">A-</button>
+          <button id="font-reset" title="Restaurar fonte padrão">Restaurar</button>
+        </div>
+        
+        <div class="popup-grupo">
+          <p class="popup-label">Leitura</p>
+          <button id="toggle-dyslexia">Alternar fonte (Dislexia)</button>
+        </div>
+
+        <div class="popup-grupo">
+          <p class="popup-label">Contraste</p>
+          <button id="toggle-contrast">Alternar Alto Contraste</button>
+        </div>
+
+      </div>
     </div>
   </div>
 

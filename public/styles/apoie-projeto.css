@@ -1,138 +1,148 @@
-/* APOIE O PROJETO */
+/* =======================================================
+   ESTILO BASE (MOBILE FIRST)
+   Tudo aqui se aplica a celulares por padrão
+   ======================================================= */
 
-.doacoes {
-  font-family: 'Poppins', sans-serif;
-  color: #111;
-}
-
-/* Hero */
+/* HERO SECTION */
 .hero {
   position: relative;
   background: url("../images/historico/foto-salinha.jpg") center/cover no-repeat;
   color: white;
   text-align: left;
   padding: 5rem 1.25rem;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente se tiver altura fixa */
 }
 
-/* o overlay avermelhado */
 .hero::before {
   content: "";
   position: absolute;
-  inset: 0; /* cobre toda a área */
-  background: rgba(173, 0, 0, 0.6); /* vermelho com transparência */
+  inset: 0; 
+  background: rgba(173, 0, 0, 0.7); /* Escureci um pouco mais para leitura */
   z-index: 0;
 }
 
-/* garante que o texto fique acima do overlay */
 .hero .overlay {
   position: relative;
   z-index: 1;
-  max-width: 25rem;
+  max-width: 100%; /* No mobile ocupa tudo */
 }
 
 .hero h2 {
   font-size: 2.5rem;
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.1;
   font-style: italic;
-  padding-bottom: 1.5625rem;
+  padding-bottom: 1rem;
 }
 
 .hero p {
-  margin-top: 0.625rem;
+  margin-top: 0.6rem;
   color: #f5f5f5;
-  font-size: small;
-  font-weight: 525;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
-/* Impacto da doação */
+/* IMPACTO DA DOAÇÃO */
 .impacto {
   background: #E8E8E8;
   text-align: center;
+  padding: 3rem 1.5rem;
 }
 
 .impacto h3 {
   font-weight: 900;
   font-size: 2rem;
-  margin-bottom: 1.875rem;
+  margin-bottom: 2rem;
   line-height: 1;
   font-style: italic;
+  color: #990100; /* Cor da marca para destaque */
 }
 
 .cards {
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  flex-direction: column; /* Celular: Um embaixo do outro */
+  gap: 1.5rem;
 }
 
 .card {
   background: #fff;
   border-radius: 0.75rem;
-  box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.1);
-  padding: 1.25rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s ease;
+  flex: 1;
 }
 
 .card h4 {
-  margin: 0.625rem 0;
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .icon {
-  width: 3rem;   /* ajuste o tamanho conforme precisar */
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   object-fit: contain;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-
-/* PIX */
+/* SEÇÃO PIX */
 .pix {
   background: #266EFF;
   color: white;
   text-align: center;
-
+  padding: 3rem 1.5rem;
 }
 
 .pix h3 {
   font-weight: 900;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .pix-box {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1.25rem;
-  border-radius: 0.75rem;
-  margin-top: 1.25rem;
+  background: rgba(255, 255, 255, 0.15); /* Levemente mais visível */
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .pix-box p {
-  padding-top: 1.25rem;
+  padding-top: 1rem;
+  font-size: 1.1rem;
 }
 
-.qr {
-  background: #ccc;
-  width: 9.375rem;
-  height: 9.375rem;
-  margin: 0 auto 0.9375rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.qr-img {
+  width: 12rem; /* Aumentado levemente */
+  height: auto;
+  border-radius: 0.5rem;
+  display: block;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .chave {
   background: #FFD901;
   color: #000;
   border: none;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 2rem; /* Botão arredondado moderno */
+  font-weight: 700;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  width: 100%; /* No mobile ocupa largura total */
+  max-width: 300px;
 }
 
 .chave:hover {
-  background: #ffdd33;
-  transform: scale(1.05);
-  box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.2);
+  background: #ffe033;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .chave:active {
@@ -140,54 +150,39 @@
 }
 
 .divisor {
-  width: 60%;
-  height: 0.00625rem;
-  background-color: white;
-  margin: 1.25rem auto;
-  border-radius: 0.125rem;
+  width: 80%;
+  height: 1px;
+  background-color: rgba(255,255,255,0.3);
+  margin: 2rem auto;
 }
 
-/* Outras formas */
+/* OUTRAS FORMAS */
 .outras {
-  background: #266EFF;
-  align-items: center;
-  flex-direction: column;
+  background: #1e5bbd; /* Um tom levemente diferente para separar visualmente do PIX */
+  padding: 3rem 1.5rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .outras h4 {
-  text-align: center;
-  margin-bottom: 1.25rem;
   color: #fff;
-  font-weight: lighter;
-  font-style: italic;
-  font-size: x-large;
-  padding-bottom: 0.9375rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
 }
 
 .outras .card {
   background: #f9f9f9;
   border-radius: 0.75rem;
-  padding: 1.25rem;
-  margin-bottom: 0.9375rem;
-  width: 90%;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
   max-width: 25rem;
-
   display: flex;
   align-items: center;
-  gap: 0.9375rem;
-  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.05);
-}
-
-.icon {
-  font-size: 2.1875rem;
-  flex-shrink: 0;
-}
-
-.texto {
-  display: flex;
-  flex-direction: column;
+  gap: 1rem;
   text-align: left;
 }
 
@@ -199,7 +194,125 @@
 }
 
 .texto p {
-  margin: 0.3125rem 0 0 0;
+  margin: 0.3rem 0 0 0;
   font-size: 0.9rem;
-  color: #333;
+  color: #555;
+}
+
+.botao-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #25D366;
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: .2s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.botao-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+/* =======================================================
+   ACESSIBILIDADE
+   ======================================================= */
+:focus-visible {
+  outline: 3px solid #FFD901;
+  outline-offset: 3px;
+}
+
+.pix p,
+.outras h2 {
+  color: #fff;
+}
+
+
+/* =======================================================
+   LAYOUT DESKTOP (TELAS GRANDES)
+   Aqui aplicamos as mudanças para ficar lado a lado
+   ======================================================= */
+@media (min-width: 1024px) {
+  
+  /* 1. Hero maior e mais limpo */
+  .hero {
+    padding: 8rem 5rem; /* Mais espaço interno */
+    min-height: 60vh; /* Ocupa uma boa parte da tela vertical */
+  }
+
+  .hero .overlay {
+    max-width: 50rem; /* Texto não estica até o infinito */
+  }
+
+  .hero h2 {
+    font-size: 4rem; /* Título gigante */
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 800px;
+  }
+
+  /* 2. Cards de Impacto Lado a Lado */
+  .cards {
+    flex-direction: row; /* Muda de coluna para linha */
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  .card:hover {
+    transform: translateY(-10px); /* Efeito de levitação no hover */
+  }
+
+  /* 3. PIX Horizontal (QR Code esquerda, Infos direita) */
+  .pix-box {
+    display: flex; /* Ativa flexbox interno */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 900px;
+    margin: 2rem auto 0 auto;
+    text-align: left; /* Alinha texto à esquerda */
+  }
+
+  .pix-box p {
+    padding-top: 0;
+    max-width: 400px; /* Evita linhas muito longas */
+  }
+  
+  .qr-img {
+    margin: 0; /* Remove margem automática */
+    width: 14rem;
+  }
+
+  /* 4. Outras Formas (Cards lado a lado se houver espaço) */
+  .outras {
+    flex-direction: column; /* Elementos lado a lado */
+    justify-content: center;
+    flex-wrap: wrap; /* Se não couber, quebra linha */
+    gap: 2rem;
+    padding: 5rem 1.5rem;
+  }
+
+  .outras h4 {
+    width: 100%; /* O título continua ocupando a linha inteira em cima */
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .outras .card {
+    width: auto;
+    flex: 1;
+    min-width: 300px; /* Tamanho mínimo do card */
+  }
 }
