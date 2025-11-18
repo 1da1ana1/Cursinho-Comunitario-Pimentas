@@ -1,0 +1,242 @@
+/* Importa a fonte para dislexia (Atkinson Hyperlegible) */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  /* Cores do Design Original */
+  --cor-primaria: #990100;    
+  --cor-secundaria: #0056b3;
+  --cor-destaque: #ffd901;
+  --cor-fundo: #f0f0f0;    
+  --cor-texto: #333333;      
+  --cor-branca: #ffffff;
+
+  /* Variáveis de Acessibilidade */
+  --font-family-base: "Poppins", sans-serif;
+  --font-size-base: 16px;
+}
+
+/* Ativa a fonte de acessibilidade quando a classe estiver no body */
+body.dyslexia-font {
+  --font-family-base: 'Atkinson Hyperlegible', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-size: var(--font-size-base); /* Permite o redimensionamento da fonte */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  background-color: var(--cor-fundo);
+  font-family: var(--font-family-base); /* Aplica a fonte escolhida */
+  color: var(--cor-texto);
+  transition: all 0.3s ease; /* Suaviza a troca de temas */
+}
+
+main {
+  flex: 1;
+}
+
+/* Tipografia Responsiva */
+h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; }
+h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1.25rem; }
+h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+p { font-size: 1rem; line-height: 1.3; }
+
+section {
+  padding: 2rem 1.5rem 1rem 1.5rem;
+}
+
+/* --- CLASSES UTILITÁRIAS (Essenciais para o JS) --- */
+.hidden {
+  display: none !important;
+}
+
+
+body.high-contrast {
+  /* 1. Redefine as variáveis de cor globais para Preto/Amarelo/Branco */
+  --cor-fundo: #000 !important;
+  --cor-texto: #fff !important;
+  --cor-branca: #000 !important; 
+  --cor-destaque: #ffff00 !important; /* Amarelo-limão para destaque */
+  --cor-primaria: #ffff00 !important;
+  --cor-secundaria: #000 !important;
+
+  /* 2. Reseta fundos e cores do body */
+  background-image: none !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* 3. Garante que seções específicas percam seus fundos coloridos */
+body.high-contrast section,
+body.high-contrast div,
+body.high-contrast nav,
+body.high-contrast main,
+body.high-contrast header,
+body.high-contrast footer,
+body.high-contrast article,
+body.high-contrast .hero,
+body.high-contrast .pix,
+body.high-contrast .outras,
+body.high-contrast .Azul,
+body.high-contrast .green,
+body.high-contrast .red,
+body.high-contrast .projeto-texto.azul,
+body.high-contrast .projeto-texto.amarelo {
+  background-image: none !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* 4. Overlay do Hero (Banner Principal) */
+body.high-contrast .hero::before {
+  background-color: #000 !important;
+  opacity: 1 !important;
+}
+
+/* 5. Links e Botões Gerais (Contorno Amarelo, Texto Amarelo) */
+body.high-contrast a,
+body.high-contrast button {
+  color: var(--cor-destaque) !important;
+  border-color: var(--cor-destaque) !important;
+  text-decoration: underline !important;
+  background-color: transparent !important;
+}
+
+/* 6. Exceção: Botões de Ação (Fundo Amarelo, Texto Preto) */
+body.high-contrast #hero-section a,
+body.high-contrast .chave,
+body.high-contrast .botao-whatsapp,
+body.high-contrast .menu-acessibilidade-popup button { 
+  color: #000 !important;
+  background-color: var(--cor-destaque) !important;
+  border: 1px solid #000 !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+}
+
+body.high-contrast .menu-acessibilidade-popup button:hover {
+  background-color: #fff !important; /* Efeito hover branco */
+}
+
+/* 7. Cards e Caixas (Borda Amarela para delimitar) */
+body.high-contrast .card,
+body.high-contrast .meu-card,
+body.high-contrast #student-section ul,
+body.high-contrast .pix-box { 
+  border: 2px solid var(--cor-destaque) !important;
+  background-color: #000 !important;
+}
+
+/* Ajustes finos para bordas internas de listas/cards */
+body.high-contrast #about-section .card-header {
+    border-bottom: 1px solid var(--cor-destaque) !important;
+}
+body.high-contrast .card-lista-flush {
+    border-top: 1px solid var(--cor-destaque) !important;
+}
+body.high-contrast .card-lista-item {
+    border-bottom: 1px solid var(--cor-destaque) !important;
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* 8. Garante que textos sejam brancos */
+body.high-contrast p,
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast h4,
+body.high-contrast h5,
+body.high-contrast li,
+body.high-contrast span,
+body.high-contrast .text-block p,
+body.high-contrast .information-title,
+body.high-contrast .information-description,
+body.high-contrast .card-header,
+body.high-contrast .card-description,
+body.high-contrast .card-titulo,
+body.high-contrast .card-texto {
+  color: #fff !important;
+}
+
+/* 9. Imagens e Ícones (Inversão para ficarem visíveis no fundo preto) */
+body.high-contrast .icon,
+body.high-contrast #student-section img{ 
+  filter: invert(1) brightness(2) grayscale(100%) !important;
+}
+
+/* 10. Popup de Acessibilidade */
+body.high-contrast .menu-acessibilidade-popup {
+  background-color: #000 !important;
+  border: 2px solid var(--cor-destaque) !important;
+  color: #fff !important;
+}
+body.high-contrast .menu-acessibilidade-popup .popup-titulo,
+body.high-contrast .menu-acessibilidade-popup .popup-label {
+  color: #fff !important;
+}
+body.high-contrast .menu-acessibilidade-popup .btn-fechar-popup {
+  color: #fff !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* ===========================================
+ * BOTÃO VOLTAR AO TOPO
+ * ===========================================
+ */
+.back-to-top {
+  background-color: #38322e;
+  border-radius: 50%; /* Redondo */
+  bottom: 20px;
+  box-shadow: 2px 3px 19px -2px rgba(0, 0, 0, .75);
+  color: #d9a000;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 20px;
+  z-index: 9999;
+  border: none;
+  
+  /* Centralizar o ícone */
+  display: none; /* Oculto por padrão */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: #000;
+  transform: scale(1.1);
+}
+
+/* Classe adicionada pelo JS */
+.back-to-top.show {
+  display: flex;
+}
+
+.back-to-top p{
+  font-size: 2.5rem;
+}
+
+/* Ajuste do botão voltar ao topo no modo alto contraste */
+body.high-contrast .back-to-top {
+  background-color: #000 !important;
+  border: 2px solid var(--cor-destaque) !important;
+  color: var(--cor-destaque) !important;
+}

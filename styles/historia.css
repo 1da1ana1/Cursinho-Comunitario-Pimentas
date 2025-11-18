@@ -1,0 +1,137 @@
+/* backup/styles/historia.css */
+
+.slide1 {
+    margin: 2rem auto; 
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra leve para destaque */
+}
+
+/* CORREÇÃO: Container com 100% de largura e transição no transform */
+.sliders {
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Suavidade no movimento */
+}
+
+/* CORREÇÃO: Cada slide ocupa 100% do container visível */
+.slide {
+    width: 100%;
+    flex: 0 0 100%; /* Impede que o slide encolha */
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* Inputs escondidos */
+.slide1 input {
+    display: none;
+}
+
+.manual-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10; /* Garante que fique acima da imagem */
+}
+
+.manual-btn {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: transparent;
+}
+
+.manual-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo do botão ativo */
+.manual-btn.active {
+    background-color: white;
+}
+
+/* Títulos e Seções */
+h1 {
+    text-align: center;
+    font-style: italic;
+    color: white;
+}
+
+.Azul { background-color:#266EFF; }
+.Azul p { text-align: center; color: white; margin: 0 5%; }
+
+/* VERSÃO MOBILE */
+@media (max-width: 768px) {
+    .slide1 {
+        max-width: 95%; 
+        aspect-ratio: 4 / 3; 
+    }
+
+    .manual-navigation {
+        bottom: 10px;
+    }
+
+    .manual-btn {
+        padding: 4px;
+    }
+}
+
+/* Espaçamentos Globais */
+.Azul, .green, .red {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.Azul p, .green p, .red p {
+    max-width: 800px;
+    text-align: center;  
+    margin-left: auto;  
+    margin-right: auto; 
+    padding: 0 1rem;  
+}
+
+.Azul h1 + p { margin-bottom: 2rem; }
+
+/* Ícones das seções */
+.espaço img, .financiamento img, .voluntarios img, 
+.cidadã img, .autonomia img, .acolhimento img {
+    width: 100px; /* Reduzi levemente para caber melhor */
+    height: 100px;     
+    object-fit: contain; 
+    margin: 0 auto 1.5rem auto;      
+    display: block;
+}
+
+.espaço, .financiamento, .voluntarios, .cidadã, .autonomia, .acolhimento {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.voluntarios, .acolhimento { margin-bottom: 0; }
+
+.h1green, .h1red, .green h1, .red h1 { margin-bottom: 3rem !important; }
+
+/* Seção Verde */
+.green { background-color: #3CBC00; }
+.green p { color: white; }
+.h1green { background-color: #3CBC00; color: white; font-style: italic; }
+
+/* Seção Vermelha */
+.red { background-color: #B90504; }
+.red p { color: white; }
+.h1red { color: white; font-style: italic; }

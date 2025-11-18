@@ -1,0 +1,109 @@
+section.introducao {
+  text-align: center;
+}
+
+.introducao .ps {
+  color: var(--cor-texto);
+  font-size: 2.25rem;
+}
+
+.introducao .mes {
+  color: var(--cor-texto);
+  font-size: 3.13rem;
+}
+
+.introducao .ccp {
+  color: var(--cor-primaria);
+  font-size: 3.13rem;
+}
+
+.introducao .ano {
+  color: var(--cor-primaria);
+  font-size: 3.13rem;
+}
+
+/* A <section> da faixa vermelha "presencial" */
+section.modelo-ps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-primaria);
+  padding: 1rem;
+  gap: 2.5rem;
+}
+
+.modelo-ps .texto-modelo {
+  font-size: 2rem;
+  color: var(--cor-branca);
+}
+
+section.endereco {
+  color: var(--cor-texto);
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+section.taxa-inscricao {
+  color: var(--cor-branca);
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--cor-primaria);
+}
+
+.taxa-inscricao .colunas {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+/* Estilizando as novas listas <ul> */
+.taxa-inscricao ul {
+  list-style: none;
+  text-align: left;
+}
+
+.taxa-inscricao li {
+  margin-bottom: 0.5rem;
+}
+
+section.informacoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.informacoes .texto-informacoes {
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  padding-bottom: 1.88rem;
+}
+
+@media (min-width: 1024px) {
+  .endereco p {
+    color: var(--cor-texto);
+    font-size: 2.5rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .taxa-inscricao p {
+    color: var(--cor-branca);
+    font-size: 2.5rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--cor-primaria);
+  }
+  .colunas{
+    font-size: 1.5rem;
+  }
+  .ccp p{
+    font-size: 1.5rem;
+  }
+}
